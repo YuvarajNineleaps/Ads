@@ -6,14 +6,14 @@ namespace Ads.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class Ad : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class ad : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Ad));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ad));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705161109542_Ad"; }
+            get { return "201705170713234_ad"; }
         }
         
         string IMigrationMetadata.Source

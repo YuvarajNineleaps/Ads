@@ -21,8 +21,12 @@ namespace Ads.Models
 
         public AdContext() : base("name=AdContext")
         {
+            // Database.SetInitializer<AdContext>(new DropCreateDatabaseIfModelChanges<AdContext>());
+
         }
 
         public System.Data.Entity.DbSet<Ads.Models.Ad> Ads { get; set; }
+
+        public System.Data.Entity.DbSet<Ads.Models.Stats> Stats { get; set; }
     }
 }

@@ -13,44 +13,44 @@ using Ads.Models;
 
 namespace Ads.Controllers
 {
-    public class AdController : ApiController
+    public class StatsController : ApiController
     {
         private AdContext db = new AdContext();
 
-        // GET: api/Ad
-        public IQueryable<Ad> GetAds()
+        // GET: api/Stats
+        public IQueryable<Stats> GetStats()
         {
-            return db.Ads.Include(b => b.Stats);
+            return db.Stats;
         }
 
-        // GET: api/Ad/5
-        [ResponseType(typeof(Ad))]
-        public async Task<IHttpActionResult> GetAd(int id)
+        // GET: api/Stats/5
+        [ResponseType(typeof(Stats))]
+        public async Task<IHttpActionResult> GetStats(int id)
         {
-            Ad ad = await db.Ads.FindAsync(id);
-            if (ad == null)
+            Stats stats = await db.Stats.FindAsync(id);
+            if (stats == null)
             {
                 return NotFound();
             }
 
-            return Ok(ad);
+            return Ok(stats);
         }
 
-        // PUT: api/Ad/5
+        // PUT: api/Stats/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutAd(int id, Ad ad)
+        public async Task<IHttpActionResult> PutStats(int id, Stats stats)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != ad.Id)
+            if (id != stats.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(ad).State = EntityState.Modified;
+            db.Entry(stats).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace Ads.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AdExists(id))
+                if (!StatsExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace Ads.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Ad
-        [ResponseType(typeof(Ad))]
-        public async Task<IHttpActionResult> PostAd(Ad ad)
+        // POST: api/Stats
+        [ResponseType(typeof(Stats))]
+        public async Task<IHttpActionResult> PostStats(Stats stats)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Ads.Add(ad);
+            db.Stats.Add(stats);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = ad.Id }, ad);
+            return CreatedAtRoute("DefaultApi", new { id = stats.Id }, stats);
         }
 
-        // DELETE: api/Ad/5
-        [ResponseType(typeof(Ad))]
-        public async Task<IHttpActionResult> DeleteAd(int id)
+        // DELETE: api/Stats/5
+        [ResponseType(typeof(Stats))]
+        public async Task<IHttpActionResult> DeleteStats(int id)
         {
-            Ad ad = await db.Ads.FindAsync(id);
-            if (ad == null)
+            Stats stats = await db.Stats.FindAsync(id);
+            if (stats == null)
             {
                 return NotFound();
             }
 
-            db.Ads.Remove(ad);
+            db.Stats.Remove(stats);
             await db.SaveChangesAsync();
 
-            return Ok(ad);
+            return Ok(stats);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace Ads.Controllers
             base.Dispose(disposing);
         }
 
-        private bool AdExists(int id)
+        private bool StatsExists(int id)
         {
-            return db.Ads.Count(e => e.Id == id) > 0;
+            return db.Stats.Count(e => e.Id == id) > 0;
         }
     }
 }
