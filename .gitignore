@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Ads/bin
+/Ads/obj/Debug
+/packages
+/Ads/obj/Release
