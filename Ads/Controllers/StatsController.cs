@@ -19,7 +19,7 @@ namespace Ads.Controllers
 
         // GET: api/Stats
         /// <summary>
-        /// Get all ads.
+        /// Get all stats.
         /// </summary>
         public IQueryable<Stats> GetStats()
         {
@@ -85,7 +85,7 @@ namespace Ads.Controllers
 
         // POST: api/Stats
         /// <summary>
-        /// Post ad.
+        /// Post stats.
         /// </summary>
         [ResponseType(typeof(Stats))]
         public async Task<IHttpActionResult> PostStats(Stats stats)
