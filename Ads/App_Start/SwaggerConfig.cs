@@ -57,7 +57,7 @@ namespace Ads
                         //c.BasicAuth("basic")
                         //    .Description("Basic HTTP Authentication");
                         //
-						// NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
+                        // NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
                         //c.ApiKey("apiKey")
                         //    .Description("API Key Authentication")
                         //    .Name("apiKey")
@@ -98,6 +98,9 @@ namespace Ads
                         // more Xml comment files.
                         //
                         //c.IncludeXmlComments(GetXmlCommentsPath());
+                        c.IncludeXmlComments(string.Format(@"{0}\bin\Ads.XML",
+                           System.AppDomain.CurrentDomain.BaseDirectory));
+                
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -112,67 +115,67 @@ namespace Ads
                         //
                         //c.MapType<ProductType>(() => new Schema { type = "integer", format = "int32" });
 
-                        // If you want to post-modify "complex" Schemas once they've been generated, across the board or for a
-                        // specific type, you can wire up one or more Schema filters.
-                        //
-                        //c.SchemaFilter<ApplySchemaVendorExtensions>();
+            // If you want to post-modify "complex" Schemas once they've been generated, across the board or for a
+            // specific type, you can wire up one or more Schema filters.
+            //
+            //c.SchemaFilter<ApplySchemaVendorExtensions>();
 
-                        // In a Swagger 2.0 document, complex types are typically declared globally and referenced by unique
-                        // Schema Id. By default, Swashbuckle does NOT use the full type name in Schema Ids. In most cases, this
-                        // works well because it prevents the "implementation detail" of type namespaces from leaking into your
-                        // Swagger docs and UI. However, if you have multiple types in your API with the same class name, you'll
-                        // need to opt out of this behavior to avoid Schema Id conflicts.
-                        //
-                        //c.UseFullTypeNameInSchemaIds();
+            // In a Swagger 2.0 document, complex types are typically declared globally and referenced by unique
+            // Schema Id. By default, Swashbuckle does NOT use the full type name in Schema Ids. In most cases, this
+            // works well because it prevents the "implementation detail" of type namespaces from leaking into your
+            // Swagger docs and UI. However, if you have multiple types in your API with the same class name, you'll
+            // need to opt out of this behavior to avoid Schema Id conflicts.
+            //
+            //c.UseFullTypeNameInSchemaIds();
 
-                        // Alternatively, you can provide your own custom strategy for inferring SchemaId's for
-                        // describing "complex" types in your API.
-                        //  
-                        //c.SchemaId(t => t.FullName.Contains('`') ? t.FullName.Substring(0, t.FullName.IndexOf('`')) : t.FullName);
+            // Alternatively, you can provide your own custom strategy for inferring SchemaId's for
+            // describing "complex" types in your API.
+            //  
+            //c.SchemaId(t => t.FullName.Contains('`') ? t.FullName.Substring(0, t.FullName.IndexOf('`')) : t.FullName);
 
-                        // Set this flag to omit schema property descriptions for any type properties decorated with the
-                        // Obsolete attribute 
-                        //c.IgnoreObsoleteProperties();
+            // Set this flag to omit schema property descriptions for any type properties decorated with the
+            // Obsolete attribute 
+            //c.IgnoreObsoleteProperties();
 
-                        // In accordance with the built in JsonSerializer, Swashbuckle will, by default, describe enums as integers.
-                        // You can change the serializer behavior by configuring the StringToEnumConverter globally or for a given
-                        // enum type. Swashbuckle will honor this change out-of-the-box. However, if you use a different
-                        // approach to serialize enums as strings, you can also force Swashbuckle to describe them as strings.
-                        // 
-                        //c.DescribeAllEnumsAsStrings();
+            // In accordance with the built in JsonSerializer, Swashbuckle will, by default, describe enums as integers.
+            // You can change the serializer behavior by configuring the StringToEnumConverter globally or for a given
+            // enum type. Swashbuckle will honor this change out-of-the-box. However, if you use a different
+            // approach to serialize enums as strings, you can also force Swashbuckle to describe them as strings.
+            // 
+            //c.DescribeAllEnumsAsStrings();
 
-                        // Similar to Schema filters, Swashbuckle also supports Operation and Document filters:
-                        //
-                        // Post-modify Operation descriptions once they've been generated by wiring up one or more
-                        // Operation filters.
-                        //
-                        //c.OperationFilter<AddDefaultResponse>();
-                        //
-                        // If you've defined an OAuth2 flow as described above, you could use a custom filter
-                        // to inspect some attribute on each action and infer which (if any) OAuth2 scopes are required
-                        // to execute the operation
-                        //
-                        //c.OperationFilter<AssignOAuth2SecurityRequirements>();
+            // Similar to Schema filters, Swashbuckle also supports Operation and Document filters:
+            //
+            // Post-modify Operation descriptions once they've been generated by wiring up one or more
+            // Operation filters.
+            //
+            //c.OperationFilter<AddDefaultResponse>();
+            //
+            // If you've defined an OAuth2 flow as described above, you could use a custom filter
+            // to inspect some attribute on each action and infer which (if any) OAuth2 scopes are required
+            // to execute the operation
+            //
+            //c.OperationFilter<AssignOAuth2SecurityRequirements>();
 
-                        // Post-modify the entire Swagger document by wiring up one or more Document filters.
-                        // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
-                        // the Swagger 2.0 spec. - https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
-                        // before using this option.
-                        //
-                        //c.DocumentFilter<ApplyDocumentVendorExtensions>();
+            // Post-modify the entire Swagger document by wiring up one or more Document filters.
+            // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
+            // the Swagger 2.0 spec. - https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
+            // before using this option.
+            //
+            //c.DocumentFilter<ApplyDocumentVendorExtensions>();
 
-                        // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
-                        // to an action. As a result, Swashbuckle will raise an exception if it encounters multiple actions
-                        // with the same path (sans query string) and HTTP method. You can workaround this by providing a
-                        // custom strategy to pick a winner or merge the descriptions for the purposes of the Swagger docs 
-                        //
-                        //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+            // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
+            // to an action. As a result, Swashbuckle will raise an exception if it encounters multiple actions
+            // with the same path (sans query string) and HTTP method. You can workaround this by providing a
+            // custom strategy to pick a winner or merge the descriptions for the purposes of the Swagger docs 
+            //
+            //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
-                        // Wrap the default SwaggerGenerator with additional behavior (e.g. caching) or provide an
-                        // alternative implementation for ISwaggerProvider with the CustomProvider option.
-                        //
-                        //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
-                    })
+            // Wrap the default SwaggerGenerator with additional behavior (e.g. caching) or provide an
+            // alternative implementation for ISwaggerProvider with the CustomProvider option.
+            //
+            //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
+        })
                 .EnableSwaggerUi(c =>
                     {
                         // Use the "InjectStylesheet" option to enrich the UI with one or more additional CSS stylesheets.

@@ -18,12 +18,19 @@ namespace Ads.Controllers
         private AdContext db = new AdContext();
 
         // GET: api/Stats
+        /// <summary>
+        /// Get all ads.
+        /// </summary>
         public IQueryable<Stats> GetStats()
         {
             return db.Stats;
         }
 
         // GET: api/Stats/5
+        /// <summary>
+        /// Get stats by ID.
+        /// </summary>
+        /// <param name="id"></param>
         [ResponseType(typeof(Stats))]
         public async Task<IHttpActionResult> GetStats(int id)
         {
@@ -37,6 +44,11 @@ namespace Ads.Controllers
         }
 
         // PUT: api/Stats/5
+        /// <summary>
+        /// Put stats by ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="stats"></param>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutStats(int id, Stats stats)
         {
@@ -72,6 +84,9 @@ namespace Ads.Controllers
         }
 
         // POST: api/Stats
+        /// <summary>
+        /// Post ad.
+        /// </summary>
         [ResponseType(typeof(Stats))]
         public async Task<IHttpActionResult> PostStats(Stats stats)
         {
@@ -87,6 +102,10 @@ namespace Ads.Controllers
         }
 
         // DELETE: api/Stats/5
+        /// <summary>
+        /// Delete stats by ID.
+        /// </summary>
+        /// <param name="id"></param>
         [ResponseType(typeof(Stats))]
         public async Task<IHttpActionResult> DeleteStats(int id)
         {
