@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Ads.Models;
+using System.Web;
+using System.Text;
+using System.Diagnostics;
 
 namespace Ads.Controllers
 {
@@ -17,13 +20,27 @@ namespace Ads.Controllers
     {
         private AdContext db = new AdContext();
 
+        public AdController()
+        {
+            var result = GetValidateCredential();
+            Console.Write(result);
+           
+        }
+
         // GET: api/Ad
         /// <summary>
         /// Get all Ads.
         /// </summary>
         public IQueryable<Ad> GetAds()
         {
-            return db.Ads.Include(b => b.Stats);
+            IQueryable<Ad> result = null;
+            Debug.WriteLine("++++++++++++++++++");
+            if (!this.GetValidateCredential())
+            {
+                result = db.Ads.Include(b => b.Stats);
+            }
+            return result;
+
         }
 
         // GET: api/Ad/5
@@ -133,6 +150,48 @@ namespace Ads.Controllers
         private bool AdExists(int id)
         {
             return db.Ads.Count(e => e.Id == id) > 0;
+        }
+
+        public bool GetValidateCredential()
+        {
+            HttpContext httpContext = HttpContext.Current;
+            try
+            {
+                string authHeader = httpContext.Request.Headers["Authorization"];
+
+                if (authHeader != null && authHeader.StartsWith("Basic"))
+                {
+                    string encodedUsernamePassword = authHeader.Substring("Basic ".Length).Trim();
+                    Encoding encoding = Encoding.GetEncoding("iso-8859-1");
+                    string usernamePassword = encoding.GetString(Convert.FromBase64String(encodedUsernamePassword));
+
+                    int seperatorIndex = usernamePassword.IndexOf(':');
+
+                    var userName = usernamePassword.Substring(0, seperatorIndex);
+                    var password = usernamePassword.Substring(seperatorIndex + 1);
+
+                    var queryable = db.Auths
+                                    .Where(x => x.Name == userName)
+                                    .Where(x => x.Password == password);
+
+                    if (queryable == null)
+                    {
+                        return false;
+
+                    }
+                }
+                else
+                {
+                    //Handle what happens if that isn't the case
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+             return true;
         }
     }
 }
