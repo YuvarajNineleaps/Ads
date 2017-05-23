@@ -199,6 +199,7 @@
     <Compile Include="Models\Auth.cs" />
     <Compile Include="Models\Stats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwaggerAuthorizationHeader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
