@@ -8,6 +8,9 @@ using System.Web.Http.Description;
 
 namespace Ads
 {
+    ///<Summary>
+    /// SwaggerAuthorizationHeader to add Authorization header in swagger UI.
+    ///</Summary>
     public class SwaggerAuthorizationHeader : IOperationFilter
     {
         /// <summary>
