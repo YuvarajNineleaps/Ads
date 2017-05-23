@@ -16,16 +16,10 @@ using System.Diagnostics;
 
 namespace Ads.Controllers
 {
+    [BasicAuthentication]
     public class AdController : ApiController
     {
         private AdContext db = new AdContext();
-
-        public AdController()
-        {
-            var result = GetValidateCredential();
-            Console.Write(result);
-           
-        }
 
         // GET: api/Ad
         /// <summary>
@@ -33,14 +27,7 @@ namespace Ads.Controllers
         /// </summary>
         public IQueryable<Ad> GetAds()
         {
-            IQueryable<Ad> result = null;
-            Debug.WriteLine("++++++++++++++++++");
-            if (!this.GetValidateCredential())
-            {
-                result = db.Ads.Include(b => b.Stats);
-            }
-            return result;
-
+            return db.Ads.Include(b => b.Stats);
         }
 
         // GET: api/Ad/5
@@ -152,46 +139,5 @@ namespace Ads.Controllers
             return db.Ads.Count(e => e.Id == id) > 0;
         }
 
-        public bool GetValidateCredential()
-        {
-            HttpContext httpContext = HttpContext.Current;
-            try
-            {
-                string authHeader = httpContext.Request.Headers["Authorization"];
-
-                if (authHeader != null && authHeader.StartsWith("Basic"))
-                {
-                    string encodedUsernamePassword = authHeader.Substring("Basic ".Length).Trim();
-                    Encoding encoding = Encoding.GetEncoding("iso-8859-1");
-                    string usernamePassword = encoding.GetString(Convert.FromBase64String(encodedUsernamePassword));
-
-                    int seperatorIndex = usernamePassword.IndexOf(':');
-
-                    var userName = usernamePassword.Substring(0, seperatorIndex);
-                    var password = usernamePassword.Substring(seperatorIndex + 1);
-
-                    var queryable = db.Auths
-                                    .Where(x => x.Name == userName)
-                                    .Where(x => x.Password == password);
-
-                    if (queryable == null)
-                    {
-                        return false;
-
-                    }
-                }
-                else
-                {
-                    //Handle what happens if that isn't the case
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
-             return true;
-        }
     }
 }
