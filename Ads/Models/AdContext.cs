@@ -28,5 +28,7 @@ namespace Ads.Models
         public System.Data.Entity.DbSet<Ads.Models.Ad> Ads { get; set; }
 
         public System.Data.Entity.DbSet<Ads.Models.Stats> Stats { get; set; }
+
+        public System.Data.Entity.DbSet<Ads.Models.Auth> Auths { get; set; }
     }
 }

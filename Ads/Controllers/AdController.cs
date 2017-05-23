@@ -10,9 +10,13 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Ads.Models;
+using System.Web;
+using System.Text;
+using System.Diagnostics;
 
 namespace Ads.Controllers
 {
+    [BasicAuthentication]
     public class AdController : ApiController
     {
         private AdContext db = new AdContext();
@@ -134,5 +138,6 @@ namespace Ads.Controllers
         {
             return db.Ads.Count(e => e.Id == id) > 0;
         }
+
     }
 }
