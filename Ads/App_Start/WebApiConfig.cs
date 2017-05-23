@@ -11,6 +11,8 @@ namespace Ads
         {
             // Web API configuration and services
 
+            // Add filter for Basic Authentication
+            config.Filters.Add(new BasicAuthenticationAttribute());
             // Web API routes
             config.MapHttpAttributeRoutes();
 
