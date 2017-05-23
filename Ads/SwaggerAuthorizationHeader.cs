@@ -28,10 +28,10 @@ namespace Ads
             var parameter = new Parameter
             {
                 description = "Authorization Token",
-                @in = "Header",
+                @in = "header",
                 name = "Authorization",
                 required = true,
-                type = "String"
+                type = "string"
             };
 
             if (apiDescription.ActionDescriptor.GetCustomAttributes<AllowAnonymousAttribute>().Any())
