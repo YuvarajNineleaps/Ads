@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace Ads.Models
 {
+    /// <summary>
+    /// Stats model class.
+    /// </summary>
     public class Stats
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

@@ -15,17 +15,29 @@ using System.Text;
 
 namespace Ads.Controllers
 {
+    /// <summary>
+    /// Auths controller class.
+    /// </summary>
     public class AuthsController : ApiController
     {
         private AdContext db = new AdContext();
 
         // GET: api/Auths
+        /// <summary>
+        /// Get all auth data.
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Auth> GetAuths()
         {
             return db.Auths;
         }
 
         // GET: api/Auths/5
+        /// <summary>
+        /// Get auth by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Auth))]
         public async Task<IHttpActionResult> GetAuth(int id)
         {
@@ -39,6 +51,12 @@ namespace Ads.Controllers
         }
 
         // PUT: api/Auths/5
+        /// <summary>
+        /// Put auth by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="auth"></param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutAuth(int id, Auth auth)
         {
@@ -74,6 +92,11 @@ namespace Ads.Controllers
         }
 
         // POST: api/Auths
+        /// <summary>
+        /// Post auth.
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Auth))]
         public async Task<IHttpActionResult> PostAuth(Auth auth)
         {
@@ -89,6 +112,11 @@ namespace Ads.Controllers
         }
 
         // DELETE: api/Auths/5
+        /// <summary>
+        /// Delete auth by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Auth))]
         public async Task<IHttpActionResult> DeleteAuth(int id)
         {
@@ -104,6 +132,10 @@ namespace Ads.Controllers
             return Ok(auth);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -118,7 +150,12 @@ namespace Ads.Controllers
             return db.Auths.Count(e => e.Id == id) > 0;
         }
 
-
+        /// <summary>
+        /// Validate User
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns>Boolean</returns>
         [NonAction]
         public bool VaidateUser(string userName, string password)
         {
