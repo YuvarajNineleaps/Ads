@@ -30,16 +30,16 @@ namespace Ads.Models
         /// <summary>
         /// 
         /// </summary>
-        public System.Data.Entity.DbSet<Ads.Models.Ad> Ads { get; set; }
+        public virtual  System.Data.Entity.DbSet<Ads.Models.Ad> Ads { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public System.Data.Entity.DbSet<Ads.Models.Stats> Stats { get; set; }
+        public virtual  System.Data.Entity.DbSet<Ads.Models.Stats> Stats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public System.Data.Entity.DbSet<Ads.Models.Auth> Auths { get; set; }
+        public virtual  System.Data.Entity.DbSet<Ads.Models.Auth> Auths { get; set; }
     }
 }

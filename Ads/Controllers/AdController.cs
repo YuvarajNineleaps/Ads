@@ -22,7 +22,19 @@ namespace Ads.Controllers
     [BasicAuthentication]
     public class AdController : ApiController
     {
-        private AdContext db = new AdContext();
+        //public readonly AdContext db;
+        //private readonly AdContext db = new AdContext();
+
+        private readonly AdContext db = new AdContext();
+
+        public AdController()
+        {
+        }
+
+        public AdController(AdContext @object)
+        {
+            this.db = @object;
+        }
 
         // GET: api/Ad
         /// <summary>
@@ -41,6 +53,7 @@ namespace Ads.Controllers
         [ResponseType(typeof(Ad))]
         public async Task<IHttpActionResult> GetAd(int id)
         {
+            Console.Write("In side id");
             Ad ad = await db.Ads.FindAsync(id);
             if (ad == null)
             {
