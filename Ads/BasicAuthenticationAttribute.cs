@@ -10,8 +10,15 @@ using Ads.Controllers;
 
 namespace Ads
 {
+    /// <summary>
+    /// Basic Authentication Attribute class.
+    /// </summary>
     public class BasicAuthenticationAttribute : AuthorizationFilterAttribute
     {
+        /// <summary>
+        /// Validating Basic authentication. From Base64 to userName and Password.
+        /// </summary>
+        /// <param name="actionContext"></param>
         public override void OnAuthorization(System.Web.Http.Controllers.HttpActionContext actionContext)
         {
             try

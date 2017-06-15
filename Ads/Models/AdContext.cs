@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using MySql.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace Ads.Models
 {
@@ -28,18 +23,18 @@ namespace Ads.Models
         }
 
         /// <summary>
-        /// 
+        /// Ads DbSet.
         /// </summary>
-        public System.Data.Entity.DbSet<Ads.Models.Ad> Ads { get; set; }
+        public DbSet<Ads.Models.Ad> Ads { get; set; }
 
         /// <summary>
-        /// 
+        /// Stats DbSet.
         /// </summary>
-        public System.Data.Entity.DbSet<Ads.Models.Stats> Stats { get; set; }
+        public DbSet<Ads.Models.Stats> Stats { get; set; }
 
         /// <summary>
-        /// 
+        /// Auths DbSet.
         /// </summary>
-        public System.Data.Entity.DbSet<Ads.Models.Auth> Auths { get; set; }
+        public DbSet<Ads.Models.Auth> Auths { get; set; }
     }
 }

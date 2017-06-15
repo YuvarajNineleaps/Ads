@@ -20,7 +20,7 @@ namespace Ads.Controllers
     /// </summary>
     public class AuthsController : ApiController
     {
-        private AdContext db = new AdContext();
+        private readonly AdContext db = new AdContext();
 
         // GET: api/Auths
         /// <summary>
@@ -133,7 +133,7 @@ namespace Ads.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Disposing of database.
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)

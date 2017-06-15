@@ -7,8 +7,14 @@ using System.Web.Routing;
 
 namespace Ads
 {
+    /// <summary>
+    /// WebApiApplication class.
+    /// </summary>
     public class WebApiApplication : System.Web.HttpApplication
     {
+        /// <summary>
+        /// Configure when application starts.
+        /// </summary>
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);

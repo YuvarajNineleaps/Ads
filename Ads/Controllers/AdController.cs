@@ -22,7 +22,7 @@ namespace Ads.Controllers
     [BasicAuthentication]
     public class AdController : ApiController
     {
-        private AdContext db = new AdContext();
+        private readonly AdContext db = new AdContext();
 
         // GET: api/Ad
         /// <summary>
@@ -131,7 +131,7 @@ namespace Ads.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Disposing of database.
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
