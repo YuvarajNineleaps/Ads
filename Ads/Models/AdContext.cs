@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using MySql.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace Ads.Models
 {
+    /// <summary>
+    /// Ad context class.
+    /// </summary>
     public class AdContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
@@ -16,19 +14,27 @@ namespace Ads.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
 
-        // public DbSet<Ad> Ad { get; set; }
-        // public DbSet<Stats> Stats { get; set; }
-
+        /// <summary>
+        /// Ad context class constructor.        
+        /// </summary>
         public AdContext() : base("name=AdContext")
         {
-            // Database.SetInitializer<AdContext>(new DropCreateDatabaseIfModelChanges<AdContext>());
 
         }
 
-        public System.Data.Entity.DbSet<Ads.Models.Ad> Ads { get; set; }
+        /// <summary>
+        /// Ads DbSet.
+        /// </summary>
+        public DbSet<Ads.Models.Ad> Ads { get; set; }
 
-        public System.Data.Entity.DbSet<Ads.Models.Stats> Stats { get; set; }
+        /// <summary>
+        /// Stats DbSet.
+        /// </summary>
+        public DbSet<Ads.Models.Stats> Stats { get; set; }
 
-        public System.Data.Entity.DbSet<Ads.Models.Auth> Auths { get; set; }
+        /// <summary>
+        /// Auths DbSet.
+        /// </summary>
+        public DbSet<Ads.Models.Auth> Auths { get; set; }
     }
 }

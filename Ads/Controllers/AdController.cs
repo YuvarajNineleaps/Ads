@@ -16,10 +16,13 @@ using System.Diagnostics;
 
 namespace Ads.Controllers
 {
+    /// <summary>
+    /// AdController class.
+    /// </summary>
     [BasicAuthentication]
     public class AdController : ApiController
     {
-        private AdContext db = new AdContext();
+        private readonly AdContext db = new AdContext();
 
         // GET: api/Ad
         /// <summary>
@@ -53,6 +56,7 @@ namespace Ads.Controllers
         /// Put ad by ID.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="ad"></param>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutAd(int id, Ad ad)
         {
@@ -91,6 +95,7 @@ namespace Ads.Controllers
         /// <summary>
         /// Post ad.
         /// </summary>
+        /// <param name="ad"></param>
         [ResponseType(typeof(Ad))]
         public async Task<IHttpActionResult> PostAd(Ad ad)
         {
@@ -125,6 +130,10 @@ namespace Ads.Controllers
             return Ok(ad);
         }
 
+        /// <summary>
+        /// Disposing of database.
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -134,6 +143,11 @@ namespace Ads.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Check for existing of ad by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Boolean.</returns>
         private bool AdExists(int id)
         {
             return db.Ads.Count(e => e.Id == id) > 0;

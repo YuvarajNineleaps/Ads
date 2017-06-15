@@ -13,9 +13,12 @@ using Ads.Models;
 
 namespace Ads.Controllers
 {
+    /// <summary>
+    /// Stats controller class.
+    /// </summary>
     public class StatsController : ApiController
     {
-        private AdContext db = new AdContext();
+        private readonly AdContext db = new AdContext();
 
         // GET: api/Stats
         /// <summary>
@@ -31,6 +34,7 @@ namespace Ads.Controllers
         /// Get stats by ID.
         /// </summary>
         /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Stats))]
         public async Task<IHttpActionResult> GetStats(int id)
         {
@@ -49,6 +53,7 @@ namespace Ads.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <param name="stats"></param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutStats(int id, Stats stats)
         {
@@ -85,8 +90,10 @@ namespace Ads.Controllers
 
         // POST: api/Stats
         /// <summary>
-        /// Post stats.
+        /// Post stats
         /// </summary>
+        /// <param name="stats"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Stats))]
         public async Task<IHttpActionResult> PostStats(Stats stats)
         {
@@ -106,6 +113,7 @@ namespace Ads.Controllers
         /// Delete stats by ID.
         /// </summary>
         /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Stats))]
         public async Task<IHttpActionResult> DeleteStats(int id)
         {
@@ -121,6 +129,10 @@ namespace Ads.Controllers
             return Ok(stats);
         }
 
+        /// <summary>
+        /// Disposing of database.
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -130,6 +142,11 @@ namespace Ads.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Check for stats by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Boolean</returns>
         private bool StatsExists(int id)
         {
             return db.Stats.Count(e => e.Id == id) > 0;

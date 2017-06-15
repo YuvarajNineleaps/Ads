@@ -7,8 +7,14 @@ using Swashbuckle.Application;
 
 namespace Ads
 {
+    /// <summary>
+    /// Swagger configuration class.
+    /// </summary>
     public class SwaggerConfig
     {
+        /// <summary>
+        /// Register swagger.
+        /// </summary>
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;

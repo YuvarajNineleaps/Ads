@@ -7,12 +7,19 @@ namespace Ads.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<Ads.Models.AdContext>
     {
+        /// <summary>
+        /// Configuration constructor.
+        /// </summary>
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
             SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
+        /// <summary>
+        /// Seeding the database.
+        /// </summary>
+        /// <param name="context"></param>
         protected override void Seed(Ads.Models.AdContext context)
         {
             //  This method will be called after migrating to the latest version.
@@ -24,8 +31,8 @@ namespace Ads.Migrations
             //      p => p.FullName,
             //      new Person { FullName = "Andrew Peters" },
             //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
+            //      new Person { FullName = "Rowan Miller" },
+            //    );,
             //
         }
     }
