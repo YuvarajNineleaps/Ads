@@ -22,100 +22,116 @@ namespace AdsApp.Test
     [TestClass]
     public class TestAdController
     {
-        //Mock<AdContext> mock;
+        Mock<AdContext> mock;
 
-        //[TestInitialize]
-        //public void testInit()
+        [TestInitialize]
+        public void testInit()
+        {
+            //Arrange
+
+            //mock = new Mock<AdContext>();
+            ////mock.Setup(x => x.Set<Ad>())
+            ////    .Returns(A.Fake<DbSet<Ad>>(o => o.Implements(typeof(IQueryable<Ad>)).Implements(typeof(IDbAsyncEnumerable<Ad>)))
+            ////            .SetupData(GetTestAds()));
+            //mock.Setup(x => x.Set<Ad>())
+            //    .Returns(new TestDbSet<Ad>
+            //    {
+            //        new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats {Id = 1, Price =10.0 } },
+            //    });
+        }
+
+        [TestMethod]
+        public void GetAds_ShouldReturnAllAds()
+        {
+            ////Arrange
+            //var mock = new Mock<AdContext>();
+            //mock.Setup(x => x.Set<Ad>())
+            //    .Returns(new TestDbSet<Ad>
+            //    {
+            //        new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats {Id = 1, Price =10.0 } },
+            //        new Ad { Id = 2, Name = "Demo1", StatId = 1, Stats = new Stats { } }
+            //    });
+
+            //var return_data = Task.FromResult<Ad>(new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats { Id = 1, Price = 10.0 } });
+            //mock.Setup(x => x.Ads.FindAsync(1)).Returns(return_data);
+
+            //Arrange
+            //var mock = A.Fake<AdContext>();
+            // mock.Ads.Add(new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats { Id = 1, Price = 10.0 } });
+            // mock.Stats.Add(new Stats { Id = 1, Price = 10.0 });
+            // mock.SaveChangesAsync();
+
+            // var fakeDbSet = A.Fake<DbSet<Ad>>(o => o.Implements(typeof(IQueryable<Ad>)).Implements(typeof(IDbAsyncEnumerable<Ad>)))
+            //             .SetupData(data);
+
+            //// A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).Provider).Returns(data.Provider);
+            ////A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).Expression).Returns(data.Expression);
+            //// A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).ElementType).Returns(data.ElementType);
+            // A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).GetEnumerator()).Returns(data.GetEnumerator());
+
+            // var fakeContext = A.Fake<AdContext>();
+            // A.CallTo(() => fakeContext.Ads).Returns(fakeDbSet);
+
+            var mockSet = new Mock<DbSet<Ad>>();
+
+            var data = GetTestAdsQuerayable();
+
+            mockSet.As<IQueryable<Ad>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<Ad>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<Ad>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<Ad>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var mockContext = new Mock<AdContext>();
+            mockContext.Setup(c => c.Ads).Returns(mockSet.Object);
+
+            AdController controller = new AdController(mockContext.Object);
+
+            // Act
+            var ads = controller.GetAds().ToList();
+
+            // Assert
+            //Assert.AreEqual(ads.Count(), 2);
+            //Assert.AreEqual(14, ads.Last().Id, "Should be 14");
+
+        }
+
+
+        //[TestMethod]
+        //public void GetAd_ShouldReturnAdByIdAsync()
         //{
-        //    //Arrange
+        //    //TODO : Add False Condition
 
-        //    mock = new Mock<AdContext>();
+        //    // Arrange
+
+        //    var mock = new Mock<AdContext>();
         //    mock.Setup(x => x.Set<Ad>())
         //        .Returns(A.Fake<DbSet<Ad>>(o => o.Implements(typeof(IQueryable<Ad>)).Implements(typeof(IDbAsyncEnumerable<Ad>)))
         //                .SetupData(GetTestAds()));
-        //}
 
-        //[TestMethod]
-        //public void GetAds_ShouldReturnAllAdsAsync()
-        //{
-        //    //Arrange
-        //    var mock = new Mock<AdContext>();
-        //    mock.Setup(x => x.Set<Ad>())
-        //        .Returns(new TestDbSet<Ad>
-        //        {
-        //            new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats {Id = 1, Price =10.0 } },
-        //            new Ad { Id = 2, Name = "Demo1", StatId = 1, Stats = new Stats { } }
-        //        });
+        //    var return_data = Task.FromResult<Ad>(new Ad { Id = 2, Name = "Demo1", StatId = 3, Stats = new Stats { Id = 2, Price = 10.0 } });
+        //    // mock.Setup(x => x.Ads.FindAsync(1)).Returns(return_data);
 
-        //    var return_data = Task.FromResult<Ad>(new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats { Id = 1, Price = 10.0 } });
-        //    mock.Setup(x => x.Ads.FindAsync(1)).Returns(return_data);
-
-        //    //Arrange
-        //    //var mock = A.Fake<AdContext>();
-        //    // mock.Ads.Add(new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats { Id = 1, Price = 10.0 } });
-        //    // mock.Stats.Add(new Stats { Id = 1, Price = 10.0 });
-        //    // mock.SaveChangesAsync();
-
-        //    var data = GetTestAds();
-        //   // var fakeDbSet = A.Fake<DbSet<Ad>>(o => o.Implements(typeof(IQueryable<Ad>)).Implements(typeof(IDbAsyncEnumerable<Ad>)))
-        //   //             .SetupData(data);
-
-        //   //// A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).Provider).Returns(data.Provider);
-        //   ////A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).Expression).Returns(data.Expression);
-        //   //// A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).ElementType).Returns(data.ElementType);
-        //   // A.CallTo(() => ((IQueryable<Ad>)fakeDbSet).GetEnumerator()).Returns(data.GetEnumerator());
-
-        //   // var fakeContext = A.Fake<AdContext>();
-        //   // A.CallTo(() => fakeContext.Ads).Returns(fakeDbSet);
-
-        //    //AdController controller = new AdController(fakeContext);
+        //    AdController controller = new AdController(mock.Object);
 
         //    // Act
-        //    //var ads = controller.GetAds();
 
-        //    // Assert
-        //    //Assert.AreEqual(ads.Count(), 2);
-        //    //Assert.AreEqual(14, ads.Last().Id, "Should be 14");
+        //    int actual_id = 100;
+
+        //    var ads = controller.GetAd(actual_id);
+
+
+        //    //var response = ads as OkNegotiatedContentResult<Enumerable<Ad>>;
+
+        //    //Assert.IsInstanceOfType(ads, typeof(NotFoundResult));
+        //    //Assert.AreEqual(2, response.Content);
+        //    //var message = ads.ExecuteAsync();
+        //    //Assert.AreEqual(response.TryGetContentValue<Ad>(out ad));
+
+        //    //var getRespone = ads.ExecuteAsync(CancellationToken.None);
+        //    Assert.IsInstanceOfType(ads, typeof(OkResult));
+        //    //Assert.IsNotNull(response);
 
         //}
-
-
-        [TestMethod]
-        public void GetAd_ShouldReturnAdByIdAsync()
-        {
-            //TODO : Add False Condition
-
-            // Arrange
-
-            var mock = new Mock<AdContext>();
-            mock.Setup(x => x.Set<Ad>())
-                .Returns(A.Fake<DbSet<Ad>>(o => o.Implements(typeof(IQueryable<Ad>)).Implements(typeof(IDbAsyncEnumerable<Ad>)))
-                        .SetupData(GetTestAds()));
-
-            var return_data = Task.FromResult<Ad>(new Ad { Id = 2, Name = "Demo1", StatId = 3, Stats = new Stats { Id = 2, Price = 10.0 } });
-            // mock.Setup(x => x.Ads.FindAsync(1)).Returns(return_data);
-
-            AdController controller = new AdController(mock.Object);
-
-            // Act
-
-            int actual_id = 100;
-
-            var ads = controller.GetAd(actual_id);
-
-
-            //var response = ads as OkNegotiatedContentResult<Enumerable<Ad>>;
-
-            //Assert.IsInstanceOfType(ads, typeof(NotFoundResult));
-            //Assert.AreEqual(2, response.Content);
-            //var message = ads.ExecuteAsync();
-            //Assert.AreEqual(response.TryGetContentValue<Ad>(out ad));
-
-            //var getRespone = ads.ExecuteAsync(CancellationToken.None);
-            Assert.IsInstanceOfType(ads, typeof(OkResult));
-            //Assert.IsNotNull(response);
-
-        }
 
         //[TestMethod]
         //public async System.Threading.Tasks.Task DeleteAd_ShouldReturnOKAsync()
@@ -157,6 +173,17 @@ namespace AdsApp.Test
 
             return testAds;
         }
-       
+        public IQueryable<Ad> GetTestAdsQuerayable()
+        {
+
+            var testAds = new List<Ad>{
+                new Ad { Id = 11, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
+                new Ad { Id = 12, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
+                new Ad { Id = 13, Name = "Demo3", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
+                new Ad { Id = 14, Name = "Demo4", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } }
+            }.AsQueryable();
+            return testAds;
+        }
+
     }
 }
