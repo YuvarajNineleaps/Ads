@@ -74,7 +74,7 @@ namespace AdsApp.Test
         }
 
         [TestMethod]
-        public async System.Threading.Tasks.Task GetAd_ShouldReturnAdsByIdAsync()
+        public async Task GetAd_ShouldReturnAdsByIdAsync()
         {
             // Data found
             int mock_id = 11;
@@ -86,17 +86,15 @@ namespace AdsApp.Test
             AdController controller = new AdController(context);
 
             
-            var ads = await controller.GetAd(mock_id) as OkNegotiatedContentResult<Ad>;
+            var ads = await controller.GetAd(mock_id);
+            var response = ads as OkNegotiatedContentResult<Ad>;
 
-            Assert.IsNotNull(ads);
-            Assert.AreEqual(mock_id, ads.Content.Id);
+            Assert.IsNotNull(response);
+            Assert.AreEqual(mock_id, response.Content.Id);
 
 
             // No data Found
-
             mock_id = 100;
-
-            
 
             //Stub FindAsync method
             return_data = Task.FromResult<Ad>(null);
@@ -113,7 +111,7 @@ namespace AdsApp.Test
         }
 
         [TestMethod]
-        public async System.Threading.Tasks.Task DeleteAd_ShouldDeleteAdsByIdAsync()
+        public async Task DeleteAd_ShouldDeleteAdsByIdAsync()
         {
             // Data found
             int mock_id = 11;
@@ -123,11 +121,12 @@ namespace AdsApp.Test
             A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
 
             AdController controller = new AdController(context);
-            var ads = await controller.DeleteAd(mock_id);
-            var response = ads as OkNegotiatedContentResult<Ad>;
 
-            Assert.AreEqual(mock_id, response.Content.Id);
+            var ads = await controller.DeleteAd(mock_id);
             Assert.AreEqual(typeof(OkNegotiatedContentResult<Ad>), ads.GetType());
+
+            var response = ads as OkNegotiatedContentResult<Ad>;
+            Assert.AreEqual(mock_id, response.Content.Id);
 
 
             //// No data Found
