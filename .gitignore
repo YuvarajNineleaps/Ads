@@ -9,3 +9,7 @@
 /Ads/obj/Debug
 /packages
 /Ads/obj/Release
+
+# Testing
+/AdsApp.Test/obj
+/AdsApp.Test/bin

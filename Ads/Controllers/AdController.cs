@@ -24,6 +24,15 @@ namespace Ads.Controllers
     {
         private readonly AdContext db = new AdContext();
 
+
+        public AdController()
+        {
+        }
+        public AdController(AdContext @object)
+        {
+            this.db = @object;
+        }
+
         // GET: api/Ad
         /// <summary>
         /// Get all Ads.

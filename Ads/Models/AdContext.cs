@@ -25,16 +25,16 @@ namespace Ads.Models
         /// <summary>
         /// Ads DbSet.
         /// </summary>
-        public DbSet<Ads.Models.Ad> Ads { get; set; }
+        public virtual DbSet<Ad> Ads { get; set; }
 
         /// <summary>
         /// Stats DbSet.
         /// </summary>
-        public DbSet<Ads.Models.Stats> Stats { get; set; }
+        public  DbSet<Stats> Stats { get; set; }
 
         /// <summary>
         /// Auths DbSet.
         /// </summary>
-        public DbSet<Ads.Models.Auth> Auths { get; set; }
+        public  DbSet<Auth> Auths { get; set; }
     }
 }
