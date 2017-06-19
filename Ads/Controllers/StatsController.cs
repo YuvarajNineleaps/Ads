@@ -20,6 +20,21 @@ namespace Ads.Controllers
     {
         private readonly AdContext db = new AdContext();
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public StatsController()
+        {}
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context"></param>
+        public StatsController(AdContext context)
+        {
+            this.db = context;
+        }
+
         // GET: api/Stats
         /// <summary>
         /// Get all stats.

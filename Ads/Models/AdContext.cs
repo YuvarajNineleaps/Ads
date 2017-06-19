@@ -30,11 +30,11 @@ namespace Ads.Models
         /// <summary>
         /// Stats DbSet.
         /// </summary>
-        public  DbSet<Stats> Stats { get; set; }
+        public virtual DbSet<Stats> Stats { get; set; }
 
         /// <summary>
         /// Auths DbSet.
         /// </summary>
-        public  DbSet<Auth> Auths { get; set; }
+        public virtual DbSet<Auth> Auths { get; set; }
     }
 }

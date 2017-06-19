@@ -24,13 +24,19 @@ namespace Ads.Controllers
     {
         private readonly AdContext db = new AdContext();
 
-
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public AdController()
+        {}
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context"></param>
+        public AdController(AdContext context)
         {
-        }
-        public AdController(AdContext @object)
-        {
-            this.db = @object;
+            this.db = context;
         }
 
         // GET: api/Ad

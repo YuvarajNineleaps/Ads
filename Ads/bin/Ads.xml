@@ -41,6 +41,17 @@
             AdController class.
             </summary>
         </member>
+        <member name="M:Ads.Controllers.AdController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.AdController.#ctor(Ads.Models.AdContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="M:Ads.Controllers.AdController.GetAds">
             <summary>
             Get all Ads.
@@ -142,6 +153,17 @@
             <summary>
             Stats controller class.
             </summary>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.#ctor(Ads.Models.AdContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
         </member>
         <member name="M:Ads.Controllers.StatsController.GetStats">
             <summary>

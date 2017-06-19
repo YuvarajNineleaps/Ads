@@ -1,13 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ads.Models;
 using System.Linq;
 using System.Collections.Generic;
 using Ads.Controllers;
-using System.Data.Entity;
 using FakeItEasy;
-using System.Data.Entity.Infrastructure;
 using EntityFramework.FakeItEasy;
 using System.Web.Http.Results;
 using System.Threading.Tasks;
@@ -23,7 +19,7 @@ namespace AdsApp.Test
 
 
         [TestInitialize]
-        public void testInit()
+        public void TestInit()
         {
             //Arrange
 
@@ -118,46 +114,6 @@ namespace AdsApp.Test
 
         }
 
-        [TestMethod]
-        public async Task DeleteAd_ShouldDeleteAdsByIdAsync()
-        {
-            // Data found
-            int mock_id = 11;
-
-            //Stub FindAsync method
-            var return_data = new Ad { Id = mock_id, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
-            A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
-
-            AdController controller = new AdController(context);
-
-            var ads = await controller.DeleteAd(mock_id);
-            Assert.AreEqual(typeof(OkNegotiatedContentResult<Ad>), ads.GetType());
-
-            var response = ads as OkNegotiatedContentResult<Ad>;
-            Assert.AreEqual(mock_id, response.Content.Id);
-
-        }
-
-        [TestMethod]
-        public async Task PostAd_ShouldPostAd()
-        {
-            // Data found
-            int mock_id = 15;
-
-            //Stub FindAsync method
-            var mock_ad = new Ad { Id = mock_id, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
-
-            AdController controller = new AdController(context);
-
-            var ads = await controller.PostAd(mock_ad);
-            Assert.AreEqual(typeof(CreatedAtRouteNegotiatedContentResult<Ad>), ads.GetType());
-
-            var response = ads as CreatedAtRouteNegotiatedContentResult<Ad>;
-            Assert.AreEqual(mock_id, response.Content.Id);
-            Assert.AreEqual(5, context.Ads.Count());
-
-
-        }
 
         [TestMethod]
         public async Task PutAd_ShouldReturnInvalidModelState()
@@ -219,6 +175,26 @@ namespace AdsApp.Test
         }
 
         [TestMethod]
+        public async Task PostAd_ShouldPostAd()
+        {
+            // Data found
+            int mock_id = 15;
+
+            //Stub FindAsync method
+            var mock_ad = new Ad { Id = mock_id, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+
+            AdController controller = new AdController(context);
+
+            var ads = await controller.PostAd(mock_ad);
+            Assert.AreEqual(typeof(CreatedAtRouteNegotiatedContentResult<Ad>), ads.GetType());
+
+            var response = ads as CreatedAtRouteNegotiatedContentResult<Ad>;
+            Assert.AreEqual(mock_id, response.Content.Id);
+            Assert.AreEqual(5, context.Ads.Count());
+
+
+        }
+        [TestMethod]
         public async Task PostAd_ShouldReturnInvalidModelState()
         {
 
@@ -238,7 +214,25 @@ namespace AdsApp.Test
             Assert.AreEqual(typeof(InvalidModelStateResult), ads.GetType());
         }
 
+        [TestMethod]
+        public async Task DeleteAd_ShouldDeleteAdsByIdAsync()
+        {
+            // Data found
+            int mock_id = 11;
 
+            //Stub FindAsync method
+            var return_data = new Ad { Id = mock_id, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+            A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
+
+            AdController controller = new AdController(context);
+
+            var ads = await controller.DeleteAd(mock_id);
+            Assert.AreEqual(typeof(OkNegotiatedContentResult<Ad>), ads.GetType());
+
+            var response = ads as OkNegotiatedContentResult<Ad>;
+            Assert.AreEqual(mock_id, response.Content.Id);
+
+        }
 
         [TestMethod]
         //[ExpectedException(typeof(ArgumentException))]
@@ -251,25 +245,13 @@ namespace AdsApp.Test
             A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
 
             AdController controller = new AdController(context);
-            var ad = await controller.GetAd(mock_id);
+            var ad = await controller.DeleteAd(mock_id);
             var response = ad as OkNegotiatedContentResult<Ad>;
 
             Assert.IsNull(response);
             Assert.AreEqual(typeof(NotFoundResult), ad.GetType());
 
         }
-
-        //public IQueryable<Ad> GetTestAdsQuerayable()
-        //{
-
-        //    var testAds = new List<Ad>{
-        //        new Ad { Id = 11, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
-        //        new Ad { Id = 12, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
-        //        new Ad { Id = 13, Name = "Demo3", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
-        //        new Ad { Id = 14, Name = "Demo4", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } }
-        //    }.AsQueryable();
-        //    return testAds;
-        //}
 
         public List<Ad> GetTestAds()
         {
