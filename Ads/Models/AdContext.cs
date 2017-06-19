@@ -36,5 +36,11 @@ namespace Ads.Models
         /// Auths DbSet.
         /// </summary>
         public virtual DbSet<Auth> Auths { get; set; }
+
+        public virtual void SetEntityStateModified(Ad ad)
+        {
+            Entry(ad).State = EntityState.Modified;
+        }
     }
 }
+

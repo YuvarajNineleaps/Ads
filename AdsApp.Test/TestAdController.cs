@@ -8,6 +8,8 @@ using EntityFramework.FakeItEasy;
 using System.Web.Http.Results;
 using System.Threading.Tasks;
 using System.Web.Http.ModelBinding;
+using System.Net;
+using System;
 
 namespace AdsApp.Test
 {
@@ -107,9 +109,7 @@ namespace AdsApp.Test
 
             AdController controller = new AdController(context);
 
-
             var ad = await controller.GetAd(mock_id);
-
             Assert.AreEqual(typeof(NotFoundResult), ad.GetType());
 
         }
@@ -156,21 +156,19 @@ namespace AdsApp.Test
         [TestMethod]
         public async Task PutAd_ShouldReturnStatusCode()
         {
-            //TODO: Should Work
             int mock_id = 11;
-
             //Stub FindAsync method
-            var mock_ad = new Ad { Id = mock_id, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+
+            String mock_name = "Demo2";
+            var mock_ad = new Ad { Id = mock_id, Name = mock_name, StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+
+            A.CallTo(() => context.SetEntityStateModified(mock_ad));
 
             AdController controller = new AdController(context);
+            var ads = await controller.PutAd(mock_ad.Id, mock_ad);
 
-            //context.Entry(mock_ad).State = EntityState.Modified;
-            //context.Entry(mock_ad).State = EntityState.Modified;
-            //var ads = await controller.PutAd(mock_ad.Id, mock_ad) as StatusCodeResult;
-
-            //var statusCode = ads as StatusCodeResult;
-
-            //Assert.AreEqual(typeof(BadRequestResult), statusCode);
+            var statusCode = ads as StatusCodeResult;
+            Assert.AreEqual(HttpStatusCode.NoContent, statusCode.StatusCode);
 
         }
 

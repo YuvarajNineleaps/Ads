@@ -28,7 +28,7 @@ namespace Ads.Controllers
         /// Default constructor
         /// </summary>
         public AdController()
-        {}
+        { }
 
         /// <summary>
         /// Constructor
@@ -85,7 +85,7 @@ namespace Ads.Controllers
                 return BadRequest();
             }
 
-            db.Entry(ad).State = EntityState.Modified;
+            db.SetEntityStateModified(ad);
 
             try
             {
