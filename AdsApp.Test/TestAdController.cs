@@ -6,12 +6,12 @@ using System.Linq;
 using System.Collections.Generic;
 using Ads.Controllers;
 using System.Data.Entity;
-using AdsApp.Tests;
 using FakeItEasy;
 using System.Data.Entity.Infrastructure;
 using EntityFramework.FakeItEasy;
 using System.Web.Http.Results;
 using System.Threading.Tasks;
+using System.Web.Http.ModelBinding;
 
 namespace AdsApp.Test
 {
@@ -19,6 +19,8 @@ namespace AdsApp.Test
     public class TestAdController
     {
         private AdContext context;
+
+
 
         [TestInitialize]
         public void testInit()
@@ -31,6 +33,7 @@ namespace AdsApp.Test
             //Mock DbSet
             var fakeDbSet = Aef.FakeDbSet<Ad>(GetTestAds()); //55 Model fakes created by FakeItEasy
             A.CallTo(() => context.Ads).Returns(fakeDbSet);
+
         }
         [TestMethod]
         public void GetAds_ShouldReturnAllAds()
@@ -80,12 +83,12 @@ namespace AdsApp.Test
             int mock_id = 11;
 
             //Stub FindAsync method
-            var return_data = Task.FromResult<Ad>(new Ad { Id = mock_id, Name = "Demo1", StatId = 1, Stats = new Stats { Id = 1, Price = 10.0 } });
+            var return_data = new Ad { Id = mock_id, Name = "Demo1", StatId = 1, Stats = new Stats { Id = 1, Price = 10.0 } };
             A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
 
             AdController controller = new AdController(context);
 
-            
+
             var ads = await controller.GetAd(mock_id);
             var response = ads as OkNegotiatedContentResult<Ad>;
 
@@ -93,15 +96,20 @@ namespace AdsApp.Test
             Assert.AreEqual(mock_id, response.Content.Id);
 
 
-            // No data Found
-            mock_id = 100;
+        }
+
+        [TestMethod]
+        public async Task GetAd_ShouldReturnNotFound()
+        {
+           
+            var mock_id = 100;
 
             //Stub FindAsync method
-            return_data = Task.FromResult<Ad>(null);
+            Ad return_data = null;
 
-            A.CallTo(() =>  context.Ads.FindAsync(mock_id)).Returns(return_data);
+            A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
 
-            controller = new AdController(context);
+            AdController controller = new AdController(context);
 
 
             var ad = await controller.GetAd(mock_id);
@@ -128,35 +136,140 @@ namespace AdsApp.Test
             var response = ads as OkNegotiatedContentResult<Ad>;
             Assert.AreEqual(mock_id, response.Content.Id);
 
+        }
 
-            //// No data Found
-            //mock_id = 100;
+        [TestMethod]
+        public async Task PostAd_ShouldPostAd()
+        {
+            // Data found
+            int mock_id = 15;
 
-            ////Stub FindAsync method
-            //return_data = Task.FromResult<Ad>(null);
-            //A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
+            //Stub FindAsync method
+            var mock_ad = new Ad { Id = mock_id, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
 
-            //controller = new AdController(context);
-            //var ad = await controller.GetAd(mock_id);
-            //var response = ad as OkNegotiatedContentResult<Ad>;
+            AdController controller = new AdController(context);
 
-            //Assert.IsNull(response);
-            //Assert.AreEqual(typeof(NotFoundResult), ad.GetType());
+            var ads = await controller.PostAd(mock_ad);
+            Assert.AreEqual(typeof(CreatedAtRouteNegotiatedContentResult<Ad>), ads.GetType());
+
+            var response = ads as CreatedAtRouteNegotiatedContentResult<Ad>;
+            Assert.AreEqual(mock_id, response.Content.Id);
+            Assert.AreEqual(5, context.Ads.Count());
+
 
         }
 
+        [TestMethod]
+        public async Task PutAd_ShouldReturnInvalidModelState()
+        {
+            //TODO: Should Work
+            int mock_id = 15;
 
-        public IQueryable<Ad> GetTestAdsQuerayable()
+            //Stub FindAsync method
+            var mock_ad = new Ad { Id = mock_id, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+
+            AdController controller = new AdController(context);
+
+            //Faking ModelState.IsValid = false , Source : https://forums.asp.net/t/1328199.aspx?Substituting+for+ModelState+when+unit+testing
+            controller.ModelState.Add("Modelstate", new ModelState());
+            controller.ModelState.AddModelError("Modelstate", "test");
+
+            var ads = await controller.PutAd(mock_id, mock_ad);
+
+            Assert.AreEqual(typeof(InvalidModelStateResult), ads.GetType());
+
+        }
+
+        [TestMethod]
+        public async Task PutAd_ShouldReturnBadRequest()
+        {
+            //TODO: Should Work
+            int mock_id = 15;
+
+            //Stub FindAsync method
+            var mock_ad = new Ad { Id = 16, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+
+            AdController controller = new AdController(context);
+
+            var ads = await controller.PutAd(mock_id, mock_ad);
+
+            Assert.AreEqual(typeof(BadRequestResult), ads.GetType());
+
+        }
+
+        [TestMethod]
+        public async Task PutAd_ShouldReturnStatusCode()
+        {
+            //TODO: Should Work
+            int mock_id = 11;
+
+            //Stub FindAsync method
+            var mock_ad = new Ad { Id = mock_id, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+
+            AdController controller = new AdController(context);
+
+            //context.Entry(mock_ad).State = EntityState.Modified;
+            //context.Entry(mock_ad).State = EntityState.Modified;
+            //var ads = await controller.PutAd(mock_ad.Id, mock_ad) as StatusCodeResult;
+
+            //var statusCode = ads as StatusCodeResult;
+
+            //Assert.AreEqual(typeof(BadRequestResult), statusCode);
+
+        }
+
+        [TestMethod]
+        public async Task PostAd_ShouldReturnInvalidModelState()
         {
 
-            var testAds = new List<Ad>{
-                new Ad { Id = 11, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
-                new Ad { Id = 12, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
-                new Ad { Id = 13, Name = "Demo3", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
-                new Ad { Id = 14, Name = "Demo4", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } }
-            }.AsQueryable();
-            return testAds;
+            //TODO: Should Work
+            int mock_id = 15;
+
+            //Stub FindAsync method
+            var mock_ad = new Ad { Id = mock_id, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+           
+            AdController controller = new AdController(context);
+
+            //Faking ModelState.IsValid = false , Source : https://forums.asp.net/t/1328199.aspx?Substituting+for+ModelState+when+unit+testing
+            controller.ModelState.Add("Modelstate", new ModelState());
+            controller.ModelState.AddModelError("Modelstate", "test");
+
+            var ads = await controller.PostAd(mock_ad);
+            Assert.AreEqual(typeof(InvalidModelStateResult), ads.GetType());
         }
+
+
+
+        [TestMethod]
+        //[ExpectedException(typeof(ArgumentException))]
+        public async Task DeleteAd_ShouldNotFound()
+        {
+             var mock_id = 100;
+
+            //Stub FindAsync method
+            Ad return_data = null;
+            A.CallTo(() => context.Ads.FindAsync(mock_id)).Returns(return_data);
+
+            AdController controller = new AdController(context);
+            var ad = await controller.GetAd(mock_id);
+            var response = ad as OkNegotiatedContentResult<Ad>;
+
+            Assert.IsNull(response);
+            Assert.AreEqual(typeof(NotFoundResult), ad.GetType());
+
+        }
+
+        //public IQueryable<Ad> GetTestAdsQuerayable()
+        //{
+
+        //    var testAds = new List<Ad>{
+        //        new Ad { Id = 11, Name = "Demo1", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
+        //        new Ad { Id = 12, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
+        //        new Ad { Id = 13, Name = "Demo3", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } },
+        //        new Ad { Id = 14, Name = "Demo4", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } }
+        //    }.AsQueryable();
+        //    return testAds;
+        //}
 
         public List<Ad> GetTestAds()
         {
