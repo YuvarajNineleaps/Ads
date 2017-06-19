@@ -159,8 +159,7 @@ namespace AdsApp.Test
             int mock_id = 11;
             //Stub FindAsync method
 
-            String mock_name = "Demo2";
-            var mock_ad = new Ad { Id = mock_id, Name = mock_name, StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+            var mock_ad = new Ad { Id = mock_id, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
 
             A.CallTo(() => context.SetEntityStateModified(mock_ad));
 

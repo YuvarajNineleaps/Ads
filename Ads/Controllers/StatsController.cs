@@ -82,7 +82,7 @@ namespace Ads.Controllers
                 return BadRequest();
             }
 
-            db.Entry(stats).State = EntityState.Modified;
+            db.SetEntityStateModified(stats);
 
             try
             {

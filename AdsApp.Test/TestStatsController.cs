@@ -8,6 +8,7 @@ using EntityFramework.FakeItEasy;
 using System.Web.Http.Results;
 using System.Threading.Tasks;
 using System.Web.Http.ModelBinding;
+using System.Net;
 
 namespace AdsApp.Test
 {
@@ -125,13 +126,15 @@ namespace AdsApp.Test
         [TestMethod]
         public async Task PutStats_ShouldReturnStatusCode()
         {
-            //TODO: Should Work
-            int mock_id = 11;
-
-            //Stub FindAsync method
             var mock_stats = new Stats { Id = 2, Price = 1.0 } ;
 
+            A.CallTo(() => context.SetEntityStateModified(mock_stats));
+
             StatsController controller = new StatsController(context);
+            var ads = await controller.PutStats(mock_stats.Id, mock_stats);
+
+            var statusCode = ads as StatusCodeResult;
+            Assert.AreEqual(HttpStatusCode.NoContent, statusCode.StatusCode);
 
 
         }

@@ -41,6 +41,16 @@ namespace Ads.Models
         {
             Entry(ad).State = EntityState.Modified;
         }
+
+        public virtual void SetEntityStateModified(Stats stats)
+        {
+            Entry(stats).State = EntityState.Modified;
+        }
+
+        public virtual void SetEntityStateModified(Auth auth)
+        {
+            Entry(auth).State = EntityState.Modified;
+        }
     }
 }
 
