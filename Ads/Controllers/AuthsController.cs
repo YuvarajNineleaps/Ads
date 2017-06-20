@@ -22,6 +22,20 @@ namespace Ads.Controllers
     {
         private readonly AdContext db = new AdContext();
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public AuthsController()
+        { }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context"></param>
+        public AuthsController(AdContext context)
+        {
+            this.db = context;
+        } 
         // GET: api/Auths
         /// <summary>
         /// Get all auth data.
@@ -70,7 +84,7 @@ namespace Ads.Controllers
                 return BadRequest();
             }
 
-            db.Entry(auth).State = EntityState.Modified;
+            db.SetEntityStateModified(auth);
 
             try
             {

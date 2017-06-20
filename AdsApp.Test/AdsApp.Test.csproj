@@ -81,6 +81,7 @@
     <Compile Include="TestAdController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestStatsController.cs" />
+    <Compile Include="TestAuthController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

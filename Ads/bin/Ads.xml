@@ -100,6 +100,17 @@
             Auths controller class.
             </summary>
         </member>
+        <member name="M:Ads.Controllers.AuthsController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.#ctor(Ads.Models.AdContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="M:Ads.Controllers.AuthsController.GetAuths">
             <summary>
             Get all auth data.
