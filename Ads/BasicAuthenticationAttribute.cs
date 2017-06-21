@@ -41,7 +41,7 @@ namespace Ads
 
                 base.OnAuthorization(actionContext);
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
             }
