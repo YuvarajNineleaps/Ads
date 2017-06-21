@@ -59,6 +59,8 @@ namespace Ads.Controllers
             Ad ad = await db.Ads.FindAsync(id);
             if (ad == null)
             {
+                Logger.Info("No data Found", "GetAd");
+
                 return NotFound();
             }
 
