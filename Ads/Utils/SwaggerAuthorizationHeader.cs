@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-namespace Ads
+namespace Ads.Utils
 {
     ///<Summary>
     /// SwaggerAuthorizationHeader to add Authorization header in swagger UI.

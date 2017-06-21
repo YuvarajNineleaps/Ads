@@ -2,6 +2,7 @@ using System.Web.Http;
 using WebActivatorEx;
 using Ads;
 using Swashbuckle.Application;
+using Ads.Utils;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 

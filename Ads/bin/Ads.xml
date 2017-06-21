@@ -25,16 +25,29 @@
             </summary>
             <param name="config">HttpConfiguration object</param>
         </member>
-        <member name="T:Ads.BasicAuthenticationAttribute">
+        <member name="T:Ads.Utils.BasicAuthenticationAttribute">
             <summary>
             Basic Authentication Attribute class.
             </summary>
         </member>
-        <member name="M:Ads.BasicAuthenticationAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+        <member name="M:Ads.Utils.BasicAuthenticationAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
             <summary>
             Validating Basic authentication. From Base64 to userName and Password.
             </summary>
             <param name="actionContext"></param>
+        </member>
+        <member name="T:Ads.Utils.SwaggerAuthorizationHeader">
+            <Summary>
+             SwaggerAuthorizationHeader to add Authorization header in swagger UI.
+            </Summary>
+        </member>
+        <member name="M:Ads.Utils.SwaggerAuthorizationHeader.Apply(Swashbuckle.Swagger.Operation,Swashbuckle.Swagger.SchemaRegistry,System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Adds an authorization header to the given operation in Swagger.
+            </summary>
+            <param name="operation">The Swashbuckle operation.</param>
+            <param name="schemaRegistry">The Swashbuckle schema registry.</param>
+            <param name="apiDescription">The Swashbuckle api description.</param>
         </member>
         <member name="T:Ads.Controllers.AdController">
             <summary>
@@ -283,19 +296,6 @@
             <summary>
             Stats model class.
             </summary>
-        </member>
-        <member name="T:Ads.SwaggerAuthorizationHeader">
-            <Summary>
-             SwaggerAuthorizationHeader to add Authorization header in swagger UI.
-            </Summary>
-        </member>
-        <member name="M:Ads.SwaggerAuthorizationHeader.Apply(Swashbuckle.Swagger.Operation,Swashbuckle.Swagger.SchemaRegistry,System.Web.Http.Description.ApiDescription)">
-            <summary>
-            Adds an authorization header to the given operation in Swagger.
-            </summary>
-            <param name="operation">The Swashbuckle operation.</param>
-            <param name="schemaRegistry">The Swashbuckle schema registry.</param>
-            <param name="apiDescription">The Swashbuckle api description.</param>
         </member>
     </members>
 </doc>
