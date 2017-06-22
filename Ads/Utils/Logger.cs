@@ -27,7 +27,7 @@ public static class Logger
     private static void WriteEntry(string message, string type, string module)
     {
         Trace.WriteLine(
-                string.Format("{0},{1},{2},{3}",
+                string.Format("{0}:{1}:{2}:{3}",
                               DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                               type,
                               module,

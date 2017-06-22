@@ -45,6 +45,7 @@ namespace Ads.Controllers
         /// </summary>
         public IQueryable<Ad> GetAds()
         {
+            Logger.Error("No data Found", "GetAds");
             return db.Ads.Include(b => b.Stats);
         }
 
@@ -59,7 +60,7 @@ namespace Ads.Controllers
             Ad ad = await db.Ads.FindAsync(id);
             if (ad == null)
             {
-                Logger.Info("No data Found", "GetAd");
+                Logger.Error("No data Found", "GetAd");
 
                 return NotFound();
             }
