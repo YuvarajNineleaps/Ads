@@ -45,8 +45,10 @@ namespace Ads.Controllers
         /// </summary>
         public IQueryable<Ad> GetAds()
         {
-            Logger.Error("No data Found", "GetAds");
+            Logger.Error("No data Found", "GetAd");
+
             return db.Ads.Include(b => b.Stats);
+
         }
 
         // GET: api/Ad/5
@@ -158,7 +160,9 @@ namespace Ads.Controllers
             {
                 db.Dispose();
             }
+
             base.Dispose(disposing);
+
         }
 
         /// <summary>
