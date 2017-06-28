@@ -178,9 +178,6 @@ namespace AdsApp.Test
         public async Task PostStats_ShouldReturnInvalidModelState()
         {
 
-            //TODO: Should Work
-            int mock_id = 15;
-
             //Stub FindAsync method
             var mock_stats = new Stats { Id = 2, Price = 1.0 } ;
 
