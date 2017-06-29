@@ -4,11 +4,11 @@
 
 /.vs
 /Ads/bin/Release/PublishOutput
-/Ads/bin/roslyn
 /Ads/bin/
 /Ads/obj/Debug
 /Ads/obj/Release
 
 # Testing
 /AdsApp.Test/obj
-/AdsApp.Test/bin
+/AdsApp.Test/bin/*
+!/AdsApp.Test/bin/Debug

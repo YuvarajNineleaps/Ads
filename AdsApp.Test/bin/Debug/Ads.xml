@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ads</name>
+    </assembly>
+    <members>
+        <member name="T:Ads.SwaggerConfig">
+            <summary>
+            Swagger configuration class.
+            </summary>
+        </member>
+        <member name="M:Ads.SwaggerConfig.Register">
+            <summary>
+            Register swagger.
+            </summary>
+        </member>
+        <member name="T:Ads.WebApiConfig">
+            <summary>
+            Web API configuration class.
+            </summary>
+        </member>
+        <member name="M:Ads.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Register HTTP configuration.
+            </summary>
+            <param name="config">HttpConfiguration object</param>
+        </member>
+        <member name="T:Ads.BasicAuthenticationAttribute">
+            <summary>
+            Basic Authentication Attribute class.
+            </summary>
+        </member>
+        <member name="M:Ads.BasicAuthenticationAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Validating Basic authentication. From Base64 to userName and Password.
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:Ads.Controllers.AdController">
+            <summary>
+            AdController class.
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.AdController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.AdController.#ctor(Ads.Models.AdContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Ads.Controllers.AdController.GetAds">
+            <summary>
+            Get all Ads.
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.AdController.GetAd(System.Int32)">
+            <summary>
+            Get ad by ID.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Ads.Controllers.AdController.PutAd(System.Int32,Ads.Models.Ad)">
+            <summary>
+            Put ad by ID.
+            </summary>
+            <param name="id"></param>
+            <param name="ad"></param>
+        </member>
+        <member name="M:Ads.Controllers.AdController.PostAd(Ads.Models.Ad)">
+            <summary>
+            Post ad.
+            </summary>
+            <param name="ad"></param>
+        </member>
+        <member name="M:Ads.Controllers.AdController.DeleteAd(System.Int32)">
+            <summary>
+            Delete ad by ID.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Ads.Controllers.AdController.Dispose(System.Boolean)">
+            <summary>
+            Disposing of database.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Ads.Controllers.AdController.AdExists(System.Int32)">
+            <summary>
+            Check for existing of ad by id.
+            </summary>
+            <param name="id"></param>
+            <returns>Boolean.</returns>
+        </member>
+        <member name="T:Ads.Controllers.AuthsController">
+            <summary>
+            Auths controller class.
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.#ctor(Ads.Models.AdContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.GetAuths">
+            <summary>
+            Get all auth data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.GetAuth(System.Int32)">
+            <summary>
+            Get auth by id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.PutAuth(System.Int32,Ads.Models.Auth)">
+            <summary>
+            Put auth by id.
+            </summary>
+            <param name="id"></param>
+            <param name="auth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.PostAuth(Ads.Models.Auth)">
+            <summary>
+            Post auth.
+            </summary>
+            <param name="auth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.DeleteAuth(System.Int32)">
+            <summary>
+            Delete auth by id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.Dispose(System.Boolean)">
+            <summary>
+            Disposing of database.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Ads.Controllers.AuthsController.VaidateUser(System.String,System.String)">
+            <summary>
+            Validate User
+            </summary>
+            <param name="userName"></param>
+            <param name="password"></param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="T:Ads.Controllers.StatsController">
+            <summary>
+            Stats controller class.
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.#ctor(Ads.Models.AdContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.GetStats">
+            <summary>
+            Get all stats.
+            </summary>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.GetStats(System.Int32)">
+            <summary>
+            Get stats by ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.PutStats(System.Int32,Ads.Models.Stats)">
+            <summary>
+            Put stats by ID.
+            </summary>
+            <param name="id"></param>
+            <param name="stats"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.PostStats(Ads.Models.Stats)">
+            <summary>
+            Post stats
+            </summary>
+            <param name="stats"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.DeleteStats(System.Int32)">
+            <summary>
+            Delete stats by ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.Dispose(System.Boolean)">
+            <summary>
+            Disposing of database.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Ads.Controllers.StatsController.StatsExists(System.Int32)">
+            <summary>
+            Check for stats by id.
+            </summary>
+            <param name="id"></param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="T:Ads.WebApiApplication">
+            <summary>
+            WebApiApplication class.
+            </summary>
+        </member>
+        <member name="M:Ads.WebApiApplication.Application_Start">
+            <summary>
+            Configure when application starts.
+            </summary>
+        </member>
+        <member name="M:Ads.Migrations.Configuration.#ctor">
+            <summary>
+            Configuration constructor.
+            </summary>
+        </member>
+        <member name="M:Ads.Migrations.Configuration.Seed(Ads.Models.AdContext)">
+            <summary>
+            Seeding the database.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Ads.Models.Ad">
+            <summary>
+            Ad model class.
+            </summary>
+        </member>
+        <member name="T:Ads.Models.AdContext">
+            <summary>
+            Ad context class.
+            </summary>
+        </member>
+        <member name="M:Ads.Models.AdContext.#ctor">
+            <summary>
+            Ad context class constructor.        
+            </summary>
+        </member>
+        <member name="P:Ads.Models.AdContext.Ads">
+            <summary>
+            Ads DbSet.
+            </summary>
+        </member>
+        <member name="P:Ads.Models.AdContext.Stats">
+            <summary>
+            Stats DbSet.
+            </summary>
+        </member>
+        <member name="P:Ads.Models.AdContext.Auths">
+            <summary>
+            Auths DbSet.
+            </summary>
+        </member>
+        <member name="T:Ads.Models.Auth">
+            <summary>
+            Auth model class. 
+            </summary>
+        </member>
+        <member name="T:Ads.Models.Stats">
+            <summary>
+            Stats model class.
+            </summary>
+        </member>
+        <member name="T:Ads.SwaggerAuthorizationHeader">
+            <Summary>
+             SwaggerAuthorizationHeader to add Authorization header in swagger UI.
+            </Summary>
+        </member>
+        <member name="M:Ads.SwaggerAuthorizationHeader.Apply(Swashbuckle.Swagger.Operation,Swashbuckle.Swagger.SchemaRegistry,System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Adds an authorization header to the given operation in Swagger.
+            </summary>
+            <param name="operation">The Swashbuckle operation.</param>
+            <param name="schemaRegistry">The Swashbuckle schema registry.</param>
+            <param name="apiDescription">The Swashbuckle api description.</param>
+        </member>
+    </members>
+</doc>
