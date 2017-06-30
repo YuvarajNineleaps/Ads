@@ -211,7 +211,6 @@
     <Compile Include="Models\Stats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwaggerAuthorizationHeader.cs" />
-    <Compile Include="ValuesController1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Ads.dll.config" />
