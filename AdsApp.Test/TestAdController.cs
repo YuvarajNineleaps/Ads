@@ -14,6 +14,9 @@ using System.Data.Entity.Infrastructure;
 
 namespace AdsApp.Test
 {
+    /// <summary>
+    /// TestAdController class.
+    /// </summary>
     [TestClass]
     public class TestAdController
     {
@@ -171,7 +174,7 @@ namespace AdsApp.Test
             var mock_ad = new Ad { Id = mock_id, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
 
             //Stub FindAsync method
-            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>(); ;
+            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>();
 
             AdController controller = new AdController(context);
             await controller.PutAd(mock_ad.Id, mock_ad);
@@ -267,6 +270,10 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Get Test Ads data.
+        /// </summary>
+        /// <returns>List of Ad</returns>
         public List<Ad> GetTestAds()
         {
 
