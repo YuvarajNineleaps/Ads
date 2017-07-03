@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http.ModelBinding;
 using System.Net;
 using System;
+using System.Data.Entity.Infrastructure;
 
 namespace AdsApp.Test
 {
@@ -118,7 +119,6 @@ namespace AdsApp.Test
         [TestMethod]
         public async Task PutAd_ShouldReturnInvalidModelState()
         {
-            //TODO: Should Work
             int mock_id = 15;
 
             //Stub FindAsync method
@@ -169,6 +169,21 @@ namespace AdsApp.Test
             var statusCode = ads as StatusCodeResult;
             Assert.AreEqual(HttpStatusCode.NoContent, statusCode.StatusCode);
 
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(DbUpdateConcurrencyException))]
+        public async Task PutAd_ShouldRaiseException()
+        {
+            int mock_id = 11;
+
+            var mock_ad = new Ad { Id = mock_id, Name = "Demo2", StatId = 2, Stats = new Stats { Id = 2, Price = 1.0 } };
+
+            //Stub FindAsync method
+            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>(); ;
+
+            AdController controller = new AdController(context);
+            await controller.PutAd(mock_ad.Id, mock_ad);
         }
 
         [TestMethod]

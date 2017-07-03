@@ -9,6 +9,7 @@ using System.Web.Http.Results;
 using System.Threading.Tasks;
 using System.Web.Http.ModelBinding;
 using System.Net;
+using System.Data.Entity.Infrastructure;
 
 namespace AdsApp.Test
 {
@@ -131,14 +132,27 @@ namespace AdsApp.Test
             A.CallTo(() => context.SetEntityStateModified(mock_stats));
 
             StatsController controller = new StatsController(context);
-            var ads = await controller.PutStats(mock_stats.Id, mock_stats);
+            var stats = await controller.PutStats(mock_stats.Id, mock_stats);
 
-            var statusCode = ads as StatusCodeResult;
+            var statusCode = stats as StatusCodeResult;
             Assert.AreEqual(HttpStatusCode.NoContent, statusCode.StatusCode);
 
 
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(DbUpdateConcurrencyException))]
+        public async Task PutAuth_ShouldRaiseException()
+        {
+
+            var mock_stats = new Stats { Id = 2, Price = 1.0 };
+
+            //Stub FindAsync method
+            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>(); ;
+
+            StatsController controller = new StatsController(context);
+            await controller.PutStats(mock_stats.Id, mock_stats);
+        }
         [TestMethod]
         public async Task PostStats_ShouldPostStats()
         {
@@ -163,9 +177,6 @@ namespace AdsApp.Test
         [TestMethod]
         public async Task PostStats_ShouldReturnInvalidModelState()
         {
-
-            //TODO: Should Work
-            int mock_id = 15;
 
             //Stub FindAsync method
             var mock_stats = new Stats { Id = 2, Price = 1.0 } ;
