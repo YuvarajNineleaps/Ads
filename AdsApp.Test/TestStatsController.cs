@@ -18,7 +18,9 @@ namespace AdsApp.Test
     {
         private AdContext context;
 
-
+        /// <summary>
+        /// Test initialize.
+        /// </summary>
         [TestInitialize]
         public void TestInit()
         {
@@ -32,6 +34,10 @@ namespace AdsApp.Test
             A.CallTo(() => context.Stats).Returns(fakeDbSet);
 
         }
+
+        /// <summary>
+        /// Test Get stats to return all stats.
+        /// </summary>
         [TestMethod]
         public void GetStats_ShouldReturnAllStats()
         {
@@ -43,6 +49,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Get stat to return stat by id.
+        /// </summary>
         [TestMethod]
         public async Task GetStats_ShouldReturnStatsByIdAsync()
         {
@@ -65,6 +74,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Get stat to return stat by id.
+        /// </summary>
         [TestMethod]
         public async Task GetStats_ShouldReturnNotFound()
         {
@@ -85,7 +97,9 @@ namespace AdsApp.Test
 
         }
 
-
+        /// <summary>
+        /// Test Put Stat.
+        /// </summary>
         [TestMethod]
         public async Task PutStats_ShouldReturnInvalidModelState()
         {
@@ -107,6 +121,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Stat.
+        /// </summary>
         [TestMethod]
         public async Task PutStats_ShouldReturnBadRequest()
         {
@@ -124,6 +141,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Stat.
+        /// </summary>
         [TestMethod]
         public async Task PutStats_ShouldReturnStatusCode()
         {
@@ -140,6 +160,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Stat.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(DbUpdateConcurrencyException))]
         public async Task PutAuth_ShouldRaiseException()
@@ -153,6 +176,10 @@ namespace AdsApp.Test
             StatsController controller = new StatsController(context);
             await controller.PutStats(mock_stats.Id, mock_stats);
         }
+
+        /// <summary>
+        /// Test Post Stat.
+        /// </summary>
         [TestMethod]
         public async Task PostStats_ShouldPostStats()
         {
@@ -174,6 +201,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Post Stat.
+        /// </summary>
         [TestMethod]
         public async Task PostStats_ShouldReturnInvalidModelState()
         {
@@ -191,6 +221,9 @@ namespace AdsApp.Test
             Assert.AreEqual(typeof(InvalidModelStateResult), stats.GetType());
         }
 
+        /// <summary>
+        /// Test Delete Stat by Id.
+        /// </summary>
         [TestMethod]
         public async Task DeleteStats_ShouldDeleteStatsByIdAsync()
         {
@@ -211,6 +244,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Delete Stat by Id.
+        /// </summary>
         [TestMethod]
         public async Task DeleteStats_ShouldNotFound()
         {
@@ -229,7 +265,10 @@ namespace AdsApp.Test
 
         }
 
-
+        /// <summary>
+        /// Get Test stats data.
+        /// </summary>
+        /// <returns></returns>
         public List<Stats> GetTestStats()
         {
 

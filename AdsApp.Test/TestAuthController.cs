@@ -18,7 +18,9 @@ namespace AdsApp.Test
     {
         private AdContext context;
 
-
+        /// <summary>
+        /// Test initialize.
+        /// </summary>
         [TestInitialize]
         public void TestInit()
         {
@@ -32,6 +34,10 @@ namespace AdsApp.Test
             A.CallTo(() => context.Auths).Returns(fakeDbSet);
 
         }
+
+        /// <summary>
+        /// Test Get auths to return all auths.
+        /// </summary>
         [TestMethod]
         public void GetAuths_ShouldReturnAllAuths()
         {
@@ -43,6 +49,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Get auth to return auth by id.
+        /// </summary>
         [TestMethod]
         public async Task GetAuths_ShouldReturnAuthsByIdAsync()
         {
@@ -65,6 +74,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Get auth to return auth by id.
+        /// </summary>
         [TestMethod]
         public async Task GetAuths_ShouldReturnNotFound()
         {
@@ -85,7 +97,9 @@ namespace AdsApp.Test
 
         }
 
-
+        /// <summary>
+        /// Test Put Auth.
+        /// </summary>
         [TestMethod]
         public async Task PutAuths_ShouldReturnInvalidModelState()
         {
@@ -106,6 +120,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Auth.
+        /// </summary>
         [TestMethod]
         public async Task PutAuths_ShouldReturnBadRequest()
         {
@@ -123,6 +140,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Auth.
+        /// </summary>
         [TestMethod]
         public async Task PutAuths_ShouldReturnStatusCode()
         {
@@ -139,6 +159,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Auth.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(DbUpdateConcurrencyException))]
         public async Task PutAuth_ShouldRaiseException()
@@ -153,6 +176,10 @@ namespace AdsApp.Test
             await controller.PutAuth(mock_auths.Id, mock_auths);
         }
 
+
+        /// <summary>
+        /// Test Post Auth.
+        /// </summary>
         [TestMethod]
         public async Task PostAuths_ShouldPostAuths()
         {
@@ -174,6 +201,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Post Auth.
+        /// </summary>
         [TestMethod]
         public async Task PostAuths_ShouldReturnInvalidModelState()
         {
@@ -194,6 +224,9 @@ namespace AdsApp.Test
             Assert.AreEqual(typeof(InvalidModelStateResult), auths.GetType());
         }
 
+        /// <summary>
+        /// Test Delete Auth by Id.
+        /// </summary>
         [TestMethod]
         public async Task DeleteAuths_ShouldDeleteAuthsByIdAsync()
         {
@@ -214,6 +247,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Delete Auth by Id.
+        /// </summary>
         [TestMethod]
         public async Task DeleteAuths_ShouldNotFound()
         {

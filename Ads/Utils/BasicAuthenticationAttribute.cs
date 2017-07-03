@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Http.Filters;
 using Ads.Controllers;
 
-namespace Ads
+namespace Ads.Utils
 {
     /// <summary>
     /// Basic Authentication Attribute class.

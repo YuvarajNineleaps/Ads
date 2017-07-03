@@ -19,8 +19,9 @@ namespace AdsApp.Test
     {
         private AdContext context;
 
-
-
+        /// <summary>
+        /// Test initialize.
+        /// </summary>
         [TestInitialize]
         public void TestInit()
         {
@@ -34,39 +35,13 @@ namespace AdsApp.Test
             A.CallTo(() => context.Ads).Returns(fakeDbSet);
 
         }
+
+        /// <summary>
+        /// Test Get ads to return all ads.
+        /// </summary>
         [TestMethod]
         public void GetAds_ShouldReturnAllAds()
         {
-            //var mockSet = new Mock<DbSet<Ad>>();
-
-            //var data = GetTestAdsQuerayable();
-
-            //mockSet.As<IQueryable<Ad>>().Setup(m => m.Provider).Returns(data.Provider);
-            //mockSet.As<IQueryable<Ad>>().Setup(m => m.Expression).Returns(data.Expression);
-            //mockSet.As<IQueryable<Ad>>().Setup(m => m.ElementType).Returns(data.ElementType);
-            //mockSet.As<IQueryable<Ad>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
-
-            //var mockContext = new Mock<AdContext>();
-            //mockContext.Setup(c => c.Ads).Returns(mockSet.Object);
-
-            //AdController controller = new AdController(mockContext.Object);
-
-
-            //////////var mock = new Mock<AdContext>();
-            ////////var context = A.Fake<AdContext>();
-            ////////var fakeDbSet = Aef.FakeDbSet<Ad>(GetTestAds()); //55 Model fakes created by FakeItEasy
-            ////////A.CallTo(() => context.Ads).Returns(fakeDbSet);
-
-            //mock.Setup(x => x.Set<Ad>())
-            //    .Returns(A.Fake<DbSet<Ad>>(builder =>
-            //             builder.Implements(typeof(IQueryable<Ad>))));
-
-            ////mock.Setup(x => x.Set<Ad>())
-            ////    .Returns(new TestDbSet<Ad>
-            ////    {
-            ////        new Ad { Id = 1, Name = "Demo1", StatId = 1, Stats = new Stats {Id = 1, Price =10.0 } }
-            ////    });
-
             AdController controller = new AdController(context);
 
             var ads = controller.GetAds().ToList();
@@ -75,6 +50,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Get ad to return ad by id.
+        /// </summary>
         [TestMethod]
         public async Task GetAd_ShouldReturnAdsByIdAsync()
         {
@@ -97,6 +75,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Get ad to return ad by id.
+        /// </summary>
         [TestMethod]
         public async Task GetAd_ShouldReturnNotFound()
         {
@@ -115,7 +96,9 @@ namespace AdsApp.Test
 
         }
 
-
+        /// <summary>
+        /// Test Put Ad.
+        /// </summary>
         [TestMethod]
         public async Task PutAd_ShouldReturnInvalidModelState()
         {
@@ -136,6 +119,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Ad.
+        /// </summary>
         [TestMethod]
         public async Task PutAd_ShouldReturnBadRequest()
         {
@@ -153,6 +139,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Ad.
+        /// </summary>
         [TestMethod]
         public async Task PutAd_ShouldReturnStatusCode()
         {
@@ -171,6 +160,9 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Put Ad.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(DbUpdateConcurrencyException))]
         public async Task PutAd_ShouldRaiseException()
@@ -186,6 +178,9 @@ namespace AdsApp.Test
             await controller.PutAd(mock_ad.Id, mock_ad);
         }
 
+        /// <summary>
+        /// Test Post Ad.
+        /// </summary>
         [TestMethod]
         public async Task PostAd_ShouldPostAd()
         {
@@ -206,6 +201,10 @@ namespace AdsApp.Test
 
 
         }
+
+        /// <summary>
+        /// Test Post Ad.
+        /// </summary>
         [TestMethod]
         public async Task PostAd_ShouldReturnInvalidModelState()
         {
@@ -226,6 +225,9 @@ namespace AdsApp.Test
             Assert.AreEqual(typeof(InvalidModelStateResult), ads.GetType());
         }
 
+        /// <summary>
+        /// Test Delete Ad by Id.
+        /// </summary>
         [TestMethod]
         public async Task DeleteAd_ShouldDeleteAdsByIdAsync()
         {
@@ -246,8 +248,10 @@ namespace AdsApp.Test
 
         }
 
+        /// <summary>
+        /// Test Delete Ad by Id.
+        /// </summary>
         [TestMethod]
-        //[ExpectedException(typeof(ArgumentException))]
         public async Task DeleteAd_ShouldNotFound()
         {
              var mock_id = 100;
