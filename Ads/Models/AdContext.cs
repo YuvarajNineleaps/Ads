@@ -37,16 +37,28 @@ namespace Ads.Models
         /// </summary>
         public virtual DbSet<Auth> Auths { get; set; }
 
+        /// <summary>
+        /// Method to set EntityState in Ad
+        /// </summary>
+        /// <param name="ad"></param>
         public virtual void SetEntityStateModified(Ad ad)
         {
             Entry(ad).State = EntityState.Modified;
         }
 
+        /// <summary>
+        /// Method to set EntityState in Stats
+        /// </summary>
+        /// <param name="stats"></param>
         public virtual void SetEntityStateModified(Stats stats)
         {
             Entry(stats).State = EntityState.Modified;
         }
 
+        /// <summary>
+        /// Method to set EntityState in Auth
+        /// </summary>
+        /// <param name="auth"></param>
         public virtual void SetEntityStateModified(Auth auth)
         {
             Entry(auth).State = EntityState.Modified;

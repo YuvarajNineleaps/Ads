@@ -287,6 +287,24 @@
             Auths DbSet.
             </summary>
         </member>
+        <member name="M:Ads.Models.AdContext.SetEntityStateModified(Ads.Models.Ad)">
+            <summary>
+            Method to set EntityState in Ad
+            </summary>
+            <param name="ad"></param>
+        </member>
+        <member name="M:Ads.Models.AdContext.SetEntityStateModified(Ads.Models.Stats)">
+            <summary>
+            Method to set EntityState in Stats
+            </summary>
+            <param name="stats"></param>
+        </member>
+        <member name="M:Ads.Models.AdContext.SetEntityStateModified(Ads.Models.Auth)">
+            <summary>
+            Method to set EntityState in Auth
+            </summary>
+            <param name="auth"></param>
+        </member>
         <member name="T:Ads.Models.Auth">
             <summary>
             Auth model class. 

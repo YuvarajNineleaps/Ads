@@ -13,6 +13,9 @@ using System.Data.Entity.Infrastructure;
 
 namespace AdsApp.Test
 {
+    /// <summary>
+    /// TestAuthsController class.
+    /// </summary>
     [TestClass]
     public class TestAuthsController
     {
@@ -169,7 +172,7 @@ namespace AdsApp.Test
             var mock_auths = new Auth { Id = 1, Name = "123", Password = "123" };
 
             //Stub FindAsync method
-            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>(); ;
+            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>();
 
             AuthsController controller = new AuthsController(context);
             await controller.PutAuth(mock_auths.Id, mock_auths);
@@ -267,6 +270,10 @@ namespace AdsApp.Test
         }
 
 
+        /// <summary>
+        /// Get Test auths data.
+        /// </summary>
+        /// <returns>List of Auth</returns>
         public List<Auth> GetTestAuths()
         {
 
