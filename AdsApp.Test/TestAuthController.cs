@@ -9,6 +9,7 @@ using System.Web.Http.Results;
 using System.Threading.Tasks;
 using System.Web.Http.ModelBinding;
 using System.Net;
+using System.Data.Entity.Infrastructure;
 
 namespace AdsApp.Test
 {
@@ -158,6 +159,24 @@ namespace AdsApp.Test
 
 
         }
+
+        /// <summary>
+        /// Test Put Auth.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(DbUpdateConcurrencyException))]
+        public async Task PutAuth_ShouldRaiseException()
+        {
+
+            var mock_auths = new Auth { Id = 1, Name = "123", Password = "123" };
+
+            //Stub FindAsync method
+            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>(); ;
+
+            AuthsController controller = new AuthsController(context);
+            await controller.PutAuth(mock_auths.Id, mock_auths);
+        }
+
 
         /// <summary>
         /// Test Post Auth.

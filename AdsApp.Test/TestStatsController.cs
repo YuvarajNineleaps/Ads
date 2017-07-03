@@ -9,6 +9,7 @@ using System.Web.Http.Results;
 using System.Threading.Tasks;
 using System.Web.Http.ModelBinding;
 using System.Net;
+using System.Data.Entity.Infrastructure;
 
 namespace AdsApp.Test
 {
@@ -157,6 +158,23 @@ namespace AdsApp.Test
             Assert.AreEqual(HttpStatusCode.NoContent, statusCode.StatusCode);
 
 
+        }
+
+        /// <summary>
+        /// Test Put Stat.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(DbUpdateConcurrencyException))]
+        public async Task PutAuth_ShouldRaiseException()
+        {
+
+            var mock_stats = new Stats { Id = 2, Price = 1.0 };
+
+            //Stub FindAsync method
+            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>(); ;
+
+            StatsController controller = new StatsController(context);
+            await controller.PutStats(mock_stats.Id, mock_stats);
         }
 
         /// <summary>
