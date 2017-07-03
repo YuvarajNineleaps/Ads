@@ -125,7 +125,6 @@ namespace AdsApp.Test
         [TestMethod]
         public async Task PutAd_ShouldReturnBadRequest()
         {
-            //TODO: Should Work
             int mock_id = 15;
 
             //Stub FindAsync method
@@ -209,7 +208,6 @@ namespace AdsApp.Test
         public async Task PostAd_ShouldReturnInvalidModelState()
         {
 
-            //TODO: Should Work
             int mock_id = 15;
 
             //Stub FindAsync method
