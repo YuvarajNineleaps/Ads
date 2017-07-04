@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6a1e1877-b38b-4bb3-aaae-c630f227feec" name="Nineleaps-HR@LAPTOP-C08IJ7DH 2017-07-04 11:58:00" runUser="LAPTOP-C08IJ7DH\Nineleaps-HR" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2017-07-04T11:58:00.9670973+05:30" queuing="2017-07-04T11:58:00.9670973+05:30" start="2017-07-04T11:57:56.3816859+05:30" finish="2017-07-04T11:58:01.5395532+05:30" />
+  <TestSettings name="default" id="bd0b3bac-5c2a-451b-a956-9462cd02642d">
+    <Execution>
+      <TestTypeSpecific />
+    </Execution>
+    <Deployment runDeploymentRoot="Nineleaps-HR_LAPTOP-C08IJ7DH 2017-07-04 11_58_00" />
+    <Properties />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="3119b884-bdb6-4504-93a5-7e7e0c57721a" testId="8115b1bf-8237-c3c6-5931-c8d9a3851955" testName="GetAds_ShouldReturnAllAds" computerName="LAPTOP-C08IJ7DH" duration="00:00:01.5967015" startTime="2017-07-04T11:57:58.7643762+05:30" endTime="2017-07-04T11:58:00.8004448+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3119b884-bdb6-4504-93a5-7e7e0c57721a" />
+    <UnitTestResult executionId="fc106204-de6f-47dc-ac9e-f91975a21742" testId="e9c0c653-0841-ad6a-ec07-c6e5f5bffac7" testName="GetAd_ShouldReturnAdsByIdAsync" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0293841" startTime="2017-07-04T11:58:00.8174569+05:30" endTime="2017-07-04T11:58:00.8474788+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc106204-de6f-47dc-ac9e-f91975a21742" />
+    <UnitTestResult executionId="2ec908de-cf98-4b63-a12d-350b053c63e6" testId="700c503c-d200-f04e-1150-32343d37524f" testName="GetAd_ShouldReturnNotFound" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0130139" startTime="2017-07-04T11:58:00.8484795+05:30" endTime="2017-07-04T11:58:00.8624993+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2ec908de-cf98-4b63-a12d-350b053c63e6" />
+    <UnitTestResult executionId="a2cb3d8b-0a72-4598-b0fc-608e5f45aac5" testId="a2ff71e4-7b12-e21c-b579-e70cd07f9114" testName="PutAd_ShouldReturnInvalidModelState" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0195080" startTime="2017-07-04T11:58:00.8624993+05:30" endTime="2017-07-04T11:58:00.8825187+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2cb3d8b-0a72-4598-b0fc-608e5f45aac5" />
+    <UnitTestResult executionId="02faf7b2-9627-4a6c-b8bf-672bbf904af6" testId="75a61a3c-dbdc-3bf8-91ef-e4aa7045e482" testName="PutAd_ShouldReturnBadRequest" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0226455" startTime="2017-07-04T11:58:00.8855180+05:30" endTime="2017-07-04T11:58:00.9085498+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02faf7b2-9627-4a6c-b8bf-672bbf904af6" />
+    <UnitTestResult executionId="e782661d-9f00-4c70-a258-0a58e8c3e47b" testId="54a4d5ff-d8c0-3133-aebb-c9cad2c8adf6" testName="PutAd_ShouldReturnStatusCode" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0228848" startTime="2017-07-04T11:58:00.9085498+05:30" endTime="2017-07-04T11:58:00.9325669+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e782661d-9f00-4c70-a258-0a58e8c3e47b" />
+    <UnitTestResult executionId="cbb5e3e0-add7-49e2-929e-2fcb0a3bad8a" testId="c14877e2-6c1f-df41-b527-73ca0964d24f" testName="PutAd_ShouldRaiseException" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0762048" startTime="2017-07-04T11:58:00.9325669+05:30" endTime="2017-07-04T11:58:01.0086300+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cbb5e3e0-add7-49e2-929e-2fcb0a3bad8a" />
+    <UnitTestResult executionId="f67aa16b-b4e3-4478-9f38-f4f7fc7cc42e" testId="15c0f7ce-b677-cc0b-3ac5-5aabe07948ee" testName="PostAd_ShouldPostAd" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0298282" startTime="2017-07-04T11:58:01.0086300+05:30" endTime="2017-07-04T11:58:01.0396525+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f67aa16b-b4e3-4478-9f38-f4f7fc7cc42e" />
+    <UnitTestResult executionId="57cc2f0c-9abb-465b-87f3-2ef45884b536" testId="8855a283-fc77-c132-2bed-be37447501ae" testName="PostAd_ShouldReturnInvalidModelState" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0133279" startTime="2017-07-04T11:58:01.0396525+05:30" endTime="2017-07-04T11:58:01.0536611+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57cc2f0c-9abb-465b-87f3-2ef45884b536" />
+    <UnitTestResult executionId="3ebd1d7c-bda1-449f-9896-0a9c6aa1e5ac" testId="b4e84474-fc20-1726-c7f6-20904f0be419" testName="DeleteAd_ShouldDeleteAdsByIdAsync" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0166570" startTime="2017-07-04T11:58:01.0536611+05:30" endTime="2017-07-04T11:58:01.0706798+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ebd1d7c-bda1-449f-9896-0a9c6aa1e5ac" />
+    <UnitTestResult executionId="1516d3d0-742b-48b2-9f6d-f42a823305f9" testId="2e8a0704-fa9b-d9de-3cdc-c1ccf5f7ac54" testName="GetStats_ShouldReturnAllStats" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0557404" startTime="2017-07-04T11:58:01.0706798+05:30" endTime="2017-07-04T11:58:01.1261318+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1516d3d0-742b-48b2-9f6d-f42a823305f9" />
+    <UnitTestResult executionId="5fd65aa1-a948-40ab-b5b2-db8588266582" testId="a75edaa1-3902-3b50-c3c8-99ed332d41ac" testName="GetStats_ShouldReturnStatsByIdAsync" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0120505" startTime="2017-07-04T11:58:01.1261318+05:30" endTime="2017-07-04T11:58:01.1261318+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5fd65aa1-a948-40ab-b5b2-db8588266582" />
+    <UnitTestResult executionId="2484b61a-6657-4e70-9078-79655caca10a" testId="7397f6b3-19e7-e82f-0eeb-57f2b2ab0084" testName="GetStats_ShouldReturnNotFound" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0084610" startTime="2017-07-04T11:58:01.1261318+05:30" endTime="2017-07-04T11:58:01.1417794+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2484b61a-6657-4e70-9078-79655caca10a" />
+    <UnitTestResult executionId="e1e9a50a-5aee-421a-acea-695dbab49c03" testId="64e70e7b-e5b4-bc86-aaca-ce1cc21d3eb9" testName="PutStats_ShouldReturnInvalidModelState" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0108576" startTime="2017-07-04T11:58:01.1417794+05:30" endTime="2017-07-04T11:58:01.1573825+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e1e9a50a-5aee-421a-acea-695dbab49c03" />
+    <UnitTestResult executionId="a7c8c446-8937-4851-9c24-b2c9b1feb606" testId="cc49bef4-3241-7592-99e7-b67f160e7067" testName="PutStats_ShouldReturnBadRequest" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0076376" startTime="2017-07-04T11:58:01.1573825+05:30" endTime="2017-07-04T11:58:01.1573825+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7c8c446-8937-4851-9c24-b2c9b1feb606" />
+    <UnitTestResult executionId="91fbdbbb-72b7-4e1b-b66f-3d6832aa8905" testId="ba07bbce-aa1c-2fb9-f837-be2dc84acb32" testName="PutStats_ShouldReturnStatusCode" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0096096" startTime="2017-07-04T11:58:01.1573825+05:30" endTime="2017-07-04T11:58:01.1760569+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="91fbdbbb-72b7-4e1b-b66f-3d6832aa8905" />
+    <UnitTestResult executionId="37c88d6b-5986-4ee4-b1e3-a983ab706cda" testId="67815242-94ed-efab-e658-8cd767478765" testName="PutAuth_ShouldRaiseException" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0106887" startTime="2017-07-04T11:58:01.1760569+05:30" endTime="2017-07-04T11:58:01.1760569+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37c88d6b-5986-4ee4-b1e3-a983ab706cda" />
+    <UnitTestResult executionId="44735d41-1fd8-44f8-b948-4f7e1d419ef8" testId="7794087a-3068-12db-776e-a2ab66984257" testName="PostStats_ShouldPostStats" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0093077" startTime="2017-07-04T11:58:01.1760569+05:30" endTime="2017-07-04T11:58:01.1918966+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="44735d41-1fd8-44f8-b948-4f7e1d419ef8" />
+    <UnitTestResult executionId="4976a090-60e4-48fb-9f1c-3f6394dc24dc" testId="a722a231-acd7-d1dd-ab27-53718695e1d0" testName="PostStats_ShouldReturnInvalidModelState" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0068151" startTime="2017-07-04T11:58:01.1918966+05:30" endTime="2017-07-04T11:58:01.1918966+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4976a090-60e4-48fb-9f1c-3f6394dc24dc" />
+    <UnitTestResult executionId="9f6ac13f-5c47-4fcd-b713-a9b9595e7817" testId="3c818b01-4acc-b659-2a56-5abb108ff939" testName="DeleteStats_ShouldDeleteStatsByIdAsync" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0106947" startTime="2017-07-04T11:58:01.1918966+05:30" endTime="2017-07-04T11:58:01.2075008+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9f6ac13f-5c47-4fcd-b713-a9b9595e7817" />
+    <UnitTestResult executionId="301cb073-aa61-4f86-9f9c-7478b2b0200f" testId="f27b8258-fc52-94e1-bbd1-0b587dac64ac" testName="GetAuths_ShouldReturnAllAuths" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0574838" startTime="2017-07-04T11:58:01.2075008+05:30" endTime="2017-07-04T11:58:01.2765154+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="301cb073-aa61-4f86-9f9c-7478b2b0200f" />
+    <UnitTestResult executionId="e5d48bf3-9fb4-461d-a5f3-3272d7196938" testId="65cd639c-8d81-46af-f1b1-f9f49a9cf5ca" testName="GetAuths_ShouldReturnAuthsByIdAsync" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0201943" startTime="2017-07-04T11:58:01.2765154+05:30" endTime="2017-07-04T11:58:01.2921461+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e5d48bf3-9fb4-461d-a5f3-3272d7196938" />
+    <UnitTestResult executionId="330cca24-2ee6-414b-bc3d-0cdbe17981d0" testId="2eb557b6-c2d2-291c-f185-76ea8a8dc2d1" testName="GetAuths_ShouldReturnNotFound" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0218915" startTime="2017-07-04T11:58:01.2921461+05:30" endTime="2017-07-04T11:58:01.3077736+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="330cca24-2ee6-414b-bc3d-0cdbe17981d0" />
+    <UnitTestResult executionId="e13d82a0-8352-4819-9cec-7d7c15559aa9" testId="e3663904-abd3-69bb-be42-950277ecab3b" testName="PutAuths_ShouldReturnInvalidModelState" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0174459" startTime="2017-07-04T11:58:01.3077736+05:30" endTime="2017-07-04T11:58:01.3233964+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e13d82a0-8352-4819-9cec-7d7c15559aa9" />
+    <UnitTestResult executionId="0270d7a8-65e3-4b39-add3-53902beaa1c1" testId="7d551046-1ca2-9c77-adfe-6f3a9497c675" testName="PutAuths_ShouldReturnBadRequest" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0131968" startTime="2017-07-04T11:58:01.3233964+05:30" endTime="2017-07-04T11:58:01.3390252+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0270d7a8-65e3-4b39-add3-53902beaa1c1" />
+    <UnitTestResult executionId="49b68e41-7498-4fa9-9020-c4fe08fcf0be" testId="39caf363-ec9a-ee24-aad6-62212782845a" testName="PutAuths_ShouldReturnStatusCode" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0165978" startTime="2017-07-04T11:58:01.3390252+05:30" endTime="2017-07-04T11:58:01.3546503+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49b68e41-7498-4fa9-9020-c4fe08fcf0be" />
+    <UnitTestResult executionId="a775ebb8-0f31-4ec3-9eb3-a8ee421612f9" testId="cfdd1063-d828-b851-29d0-9d0ebef7631d" testName="PutAuth_ShouldRaiseException" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0194413" startTime="2017-07-04T11:58:01.3546503+05:30" endTime="2017-07-04T11:58:01.3767864+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a775ebb8-0f31-4ec3-9eb3-a8ee421612f9" />
+    <UnitTestResult executionId="3a127777-c0f1-48bf-9263-16a16f96ea32" testId="18330eee-9409-b83d-c2fa-895e6c352920" testName="PostAuths_ShouldPostAuths" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0159041" startTime="2017-07-04T11:58:01.3767864+05:30" endTime="2017-07-04T11:58:01.3924120+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a127777-c0f1-48bf-9263-16a16f96ea32" />
+    <UnitTestResult executionId="1007835d-0486-4276-a7ab-7784f2e3a5b8" testId="f96b525a-8ae1-28eb-2ef4-501275dcf31c" testName="PostAuths_ShouldReturnInvalidModelState" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0251344" startTime="2017-07-04T11:58:01.3924120+05:30" endTime="2017-07-04T11:58:01.4236631+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1007835d-0486-4276-a7ab-7784f2e3a5b8" />
+    <UnitTestResult executionId="3f7aaf2f-f41e-42c8-bd94-ca43b55a2c9b" testId="d0c8c421-a10b-7ffb-4f92-38b6e875c470" testName="DeleteAuths_ShouldDeleteAuthsByIdAsync" computerName="LAPTOP-C08IJ7DH" duration="00:00:00.0206389" startTime="2017-07-04T11:58:01.4236631+05:30" endTime="2017-07-04T11:58:01.4392878+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f7aaf2f-f41e-42c8-bd94-ca43b55a2c9b" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="GetAds_ShouldReturnAllAds" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="8115b1bf-8237-c3c6-5931-c8d9a3851955">
+      <Execution id="3119b884-bdb6-4504-93a5-7e7e0c57721a" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="GetAds_ShouldReturnAllAds" />
+    </UnitTest>
+    <UnitTest name="GetAd_ShouldReturnAdsByIdAsync" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="e9c0c653-0841-ad6a-ec07-c6e5f5bffac7">
+      <Execution id="fc106204-de6f-47dc-ac9e-f91975a21742" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="GetAd_ShouldReturnAdsByIdAsync" />
+    </UnitTest>
+    <UnitTest name="GetAd_ShouldReturnNotFound" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="700c503c-d200-f04e-1150-32343d37524f">
+      <Execution id="2ec908de-cf98-4b63-a12d-350b053c63e6" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="GetAd_ShouldReturnNotFound" />
+    </UnitTest>
+    <UnitTest name="PutAd_ShouldReturnInvalidModelState" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="a2ff71e4-7b12-e21c-b579-e70cd07f9114">
+      <Execution id="a2cb3d8b-0a72-4598-b0fc-608e5f45aac5" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="PutAd_ShouldReturnInvalidModelState" />
+    </UnitTest>
+    <UnitTest name="PutAd_ShouldReturnBadRequest" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="75a61a3c-dbdc-3bf8-91ef-e4aa7045e482">
+      <Execution id="02faf7b2-9627-4a6c-b8bf-672bbf904af6" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="PutAd_ShouldReturnBadRequest" />
+    </UnitTest>
+    <UnitTest name="PutAd_ShouldReturnStatusCode" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="54a4d5ff-d8c0-3133-aebb-c9cad2c8adf6">
+      <Execution id="e782661d-9f00-4c70-a258-0a58e8c3e47b" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="PutAd_ShouldReturnStatusCode" />
+    </UnitTest>
+    <UnitTest name="PutAd_ShouldRaiseException" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="c14877e2-6c1f-df41-b527-73ca0964d24f">
+      <Execution id="cbb5e3e0-add7-49e2-929e-2fcb0a3bad8a" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="PutAd_ShouldRaiseException" />
+    </UnitTest>
+    <UnitTest name="PostAd_ShouldPostAd" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="15c0f7ce-b677-cc0b-3ac5-5aabe07948ee">
+      <Execution id="f67aa16b-b4e3-4478-9f38-f4f7fc7cc42e" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="PostAd_ShouldPostAd" />
+    </UnitTest>
+    <UnitTest name="PostAd_ShouldReturnInvalidModelState" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="8855a283-fc77-c132-2bed-be37447501ae">
+      <Execution id="57cc2f0c-9abb-465b-87f3-2ef45884b536" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="PostAd_ShouldReturnInvalidModelState" />
+    </UnitTest>
+    <UnitTest name="DeleteAd_ShouldDeleteAdsByIdAsync" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="b4e84474-fc20-1726-c7f6-20904f0be419">
+      <Execution id="3ebd1d7c-bda1-449f-9896-0a9c6aa1e5ac" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAdController" name="DeleteAd_ShouldDeleteAdsByIdAsync" />
+    </UnitTest>
+    <UnitTest name="GetStats_ShouldReturnAllStats" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="2e8a0704-fa9b-d9de-3cdc-c1ccf5f7ac54">
+      <Execution id="1516d3d0-742b-48b2-9f6d-f42a823305f9" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="GetStats_ShouldReturnAllStats" />
+    </UnitTest>
+    <UnitTest name="GetStats_ShouldReturnStatsByIdAsync" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="a75edaa1-3902-3b50-c3c8-99ed332d41ac">
+      <Execution id="5fd65aa1-a948-40ab-b5b2-db8588266582" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="GetStats_ShouldReturnStatsByIdAsync" />
+    </UnitTest>
+    <UnitTest name="GetStats_ShouldReturnNotFound" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="7397f6b3-19e7-e82f-0eeb-57f2b2ab0084">
+      <Execution id="2484b61a-6657-4e70-9078-79655caca10a" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="GetStats_ShouldReturnNotFound" />
+    </UnitTest>
+    <UnitTest name="PutStats_ShouldReturnInvalidModelState" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="64e70e7b-e5b4-bc86-aaca-ce1cc21d3eb9">
+      <Execution id="e1e9a50a-5aee-421a-acea-695dbab49c03" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="PutStats_ShouldReturnInvalidModelState" />
+    </UnitTest>
+    <UnitTest name="PutStats_ShouldReturnBadRequest" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="cc49bef4-3241-7592-99e7-b67f160e7067">
+      <Execution id="a7c8c446-8937-4851-9c24-b2c9b1feb606" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="PutStats_ShouldReturnBadRequest" />
+    </UnitTest>
+    <UnitTest name="PutStats_ShouldReturnStatusCode" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="ba07bbce-aa1c-2fb9-f837-be2dc84acb32">
+      <Execution id="91fbdbbb-72b7-4e1b-b66f-3d6832aa8905" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="PutStats_ShouldReturnStatusCode" />
+    </UnitTest>
+    <UnitTest name="PutAuth_ShouldRaiseException" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="67815242-94ed-efab-e658-8cd767478765">
+      <Execution id="37c88d6b-5986-4ee4-b1e3-a983ab706cda" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="PutAuth_ShouldRaiseException" />
+    </UnitTest>
+    <UnitTest name="PostStats_ShouldPostStats" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="7794087a-3068-12db-776e-a2ab66984257">
+      <Execution id="44735d41-1fd8-44f8-b948-4f7e1d419ef8" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="PostStats_ShouldPostStats" />
+    </UnitTest>
+    <UnitTest name="PostStats_ShouldReturnInvalidModelState" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="a722a231-acd7-d1dd-ab27-53718695e1d0">
+      <Execution id="4976a090-60e4-48fb-9f1c-3f6394dc24dc" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="PostStats_ShouldReturnInvalidModelState" />
+    </UnitTest>
+    <UnitTest name="DeleteStats_ShouldDeleteStatsByIdAsync" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="3c818b01-4acc-b659-2a56-5abb108ff939">
+      <Execution id="9f6ac13f-5c47-4fcd-b713-a9b9595e7817" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestStatsController" name="DeleteStats_ShouldDeleteStatsByIdAsync" />
+    </UnitTest>
+    <UnitTest name="GetAuths_ShouldReturnAllAuths" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="f27b8258-fc52-94e1-bbd1-0b587dac64ac">
+      <Execution id="301cb073-aa61-4f86-9f9c-7478b2b0200f" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="GetAuths_ShouldReturnAllAuths" />
+    </UnitTest>
+    <UnitTest name="GetAuths_ShouldReturnAuthsByIdAsync" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="65cd639c-8d81-46af-f1b1-f9f49a9cf5ca">
+      <Execution id="e5d48bf3-9fb4-461d-a5f3-3272d7196938" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="GetAuths_ShouldReturnAuthsByIdAsync" />
+    </UnitTest>
+    <UnitTest name="GetAuths_ShouldReturnNotFound" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="2eb557b6-c2d2-291c-f185-76ea8a8dc2d1">
+      <Execution id="330cca24-2ee6-414b-bc3d-0cdbe17981d0" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="GetAuths_ShouldReturnNotFound" />
+    </UnitTest>
+    <UnitTest name="PutAuths_ShouldReturnInvalidModelState" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="e3663904-abd3-69bb-be42-950277ecab3b">
+      <Execution id="e13d82a0-8352-4819-9cec-7d7c15559aa9" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="PutAuths_ShouldReturnInvalidModelState" />
+    </UnitTest>
+    <UnitTest name="PutAuths_ShouldReturnBadRequest" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="7d551046-1ca2-9c77-adfe-6f3a9497c675">
+      <Execution id="0270d7a8-65e3-4b39-add3-53902beaa1c1" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="PutAuths_ShouldReturnBadRequest" />
+    </UnitTest>
+    <UnitTest name="PutAuths_ShouldReturnStatusCode" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="39caf363-ec9a-ee24-aad6-62212782845a">
+      <Execution id="49b68e41-7498-4fa9-9020-c4fe08fcf0be" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="PutAuths_ShouldReturnStatusCode" />
+    </UnitTest>
+    <UnitTest name="PutAuth_ShouldRaiseException" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="cfdd1063-d828-b851-29d0-9d0ebef7631d">
+      <Execution id="a775ebb8-0f31-4ec3-9eb3-a8ee421612f9" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="PutAuth_ShouldRaiseException" />
+    </UnitTest>
+    <UnitTest name="PostAuths_ShouldPostAuths" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="18330eee-9409-b83d-c2fa-895e6c352920">
+      <Execution id="3a127777-c0f1-48bf-9263-16a16f96ea32" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="PostAuths_ShouldPostAuths" />
+    </UnitTest>
+    <UnitTest name="PostAuths_ShouldReturnInvalidModelState" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="f96b525a-8ae1-28eb-2ef4-501275dcf31c">
+      <Execution id="1007835d-0486-4276-a7ab-7784f2e3a5b8" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="PostAuths_ShouldReturnInvalidModelState" />
+    </UnitTest>
+    <UnitTest name="DeleteAuths_ShouldDeleteAuthsByIdAsync" storage="d:\workspace\ads\adsapp.test\bin\debug\adsapp.test.dll" id="d0c8c421-a10b-7ffb-4f92-38b6e875c470">
+      <Execution id="3f7aaf2f-f41e-42c8-bd94-ca43b55a2c9b" />
+      <TestMethod codeBase="D:\Workspace\Ads\AdsApp.Test\bin\Debug\AdsApp.Test.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="AdsApp.Test.TestAuthsController" name="DeleteAuths_ShouldDeleteAuthsByIdAsync" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="8115b1bf-8237-c3c6-5931-c8d9a3851955" executionId="3119b884-bdb6-4504-93a5-7e7e0c57721a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9c0c653-0841-ad6a-ec07-c6e5f5bffac7" executionId="fc106204-de6f-47dc-ac9e-f91975a21742" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="700c503c-d200-f04e-1150-32343d37524f" executionId="2ec908de-cf98-4b63-a12d-350b053c63e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a2ff71e4-7b12-e21c-b579-e70cd07f9114" executionId="a2cb3d8b-0a72-4598-b0fc-608e5f45aac5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75a61a3c-dbdc-3bf8-91ef-e4aa7045e482" executionId="02faf7b2-9627-4a6c-b8bf-672bbf904af6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54a4d5ff-d8c0-3133-aebb-c9cad2c8adf6" executionId="e782661d-9f00-4c70-a258-0a58e8c3e47b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c14877e2-6c1f-df41-b527-73ca0964d24f" executionId="cbb5e3e0-add7-49e2-929e-2fcb0a3bad8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15c0f7ce-b677-cc0b-3ac5-5aabe07948ee" executionId="f67aa16b-b4e3-4478-9f38-f4f7fc7cc42e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8855a283-fc77-c132-2bed-be37447501ae" executionId="57cc2f0c-9abb-465b-87f3-2ef45884b536" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4e84474-fc20-1726-c7f6-20904f0be419" executionId="3ebd1d7c-bda1-449f-9896-0a9c6aa1e5ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e8a0704-fa9b-d9de-3cdc-c1ccf5f7ac54" executionId="1516d3d0-742b-48b2-9f6d-f42a823305f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a75edaa1-3902-3b50-c3c8-99ed332d41ac" executionId="5fd65aa1-a948-40ab-b5b2-db8588266582" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7397f6b3-19e7-e82f-0eeb-57f2b2ab0084" executionId="2484b61a-6657-4e70-9078-79655caca10a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64e70e7b-e5b4-bc86-aaca-ce1cc21d3eb9" executionId="e1e9a50a-5aee-421a-acea-695dbab49c03" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cc49bef4-3241-7592-99e7-b67f160e7067" executionId="a7c8c446-8937-4851-9c24-b2c9b1feb606" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba07bbce-aa1c-2fb9-f837-be2dc84acb32" executionId="91fbdbbb-72b7-4e1b-b66f-3d6832aa8905" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="67815242-94ed-efab-e658-8cd767478765" executionId="37c88d6b-5986-4ee4-b1e3-a983ab706cda" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7794087a-3068-12db-776e-a2ab66984257" executionId="44735d41-1fd8-44f8-b948-4f7e1d419ef8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a722a231-acd7-d1dd-ab27-53718695e1d0" executionId="4976a090-60e4-48fb-9f1c-3f6394dc24dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c818b01-4acc-b659-2a56-5abb108ff939" executionId="9f6ac13f-5c47-4fcd-b713-a9b9595e7817" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f27b8258-fc52-94e1-bbd1-0b587dac64ac" executionId="301cb073-aa61-4f86-9f9c-7478b2b0200f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65cd639c-8d81-46af-f1b1-f9f49a9cf5ca" executionId="e5d48bf3-9fb4-461d-a5f3-3272d7196938" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2eb557b6-c2d2-291c-f185-76ea8a8dc2d1" executionId="330cca24-2ee6-414b-bc3d-0cdbe17981d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3663904-abd3-69bb-be42-950277ecab3b" executionId="e13d82a0-8352-4819-9cec-7d7c15559aa9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7d551046-1ca2-9c77-adfe-6f3a9497c675" executionId="0270d7a8-65e3-4b39-add3-53902beaa1c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39caf363-ec9a-ee24-aad6-62212782845a" executionId="49b68e41-7498-4fa9-9020-c4fe08fcf0be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cfdd1063-d828-b851-29d0-9d0ebef7631d" executionId="a775ebb8-0f31-4ec3-9eb3-a8ee421612f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18330eee-9409-b83d-c2fa-895e6c352920" executionId="3a127777-c0f1-48bf-9263-16a16f96ea32" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f96b525a-8ae1-28eb-2ef4-501275dcf31c" executionId="1007835d-0486-4276-a7ab-7784f2e3a5b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0c8c421-a10b-7ffb-4f92-38b6e875c470" executionId="3f7aaf2f-f41e-42c8-bd94-ca43b55a2c9b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="30" executed="30" passed="30" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>
