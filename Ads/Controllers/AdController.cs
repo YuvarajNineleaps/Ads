@@ -146,6 +146,25 @@ namespace Ads.Controllers
             return Ok(ad);
         }
 
+        // DELETE: api/Ad/5
+        /// <summary>
+        /// Delete ad by ID.
+        /// </summary>
+        /// <param name="id"></param>
+        [ResponseType(typeof(Ad))]
+        public async Task<IHttpActionResult> abc(int id)
+        {
+            Ad ad = await db.Ads.FindAsync(id);
+            if (ad == null)
+            {
+                return NotFound();
+            }
+
+            db.Ads.Remove(ad);
+            await db.SaveChangesAsync();
+
+            return Ok(ad);
+        }
         /// <summary>
         /// Disposing of database.
         /// </summary>
