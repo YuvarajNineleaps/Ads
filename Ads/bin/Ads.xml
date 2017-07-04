@@ -30,7 +30,16 @@
             Basic Authentication Attribute class.
             </summary>
         </member>
+<<<<<<< HEAD
         <member name="M:Ads.Utils.BasicAuthenticationAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+=======
+        <member name="M:Ads.BasicAuthenticationAttribute.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Ads.BasicAuthenticationAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+>>>>>>> dev_test_auth_wip
             <summary>
             Validating Basic authentication. From Base64 to userName and Password.
             </summary>

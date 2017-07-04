@@ -171,7 +171,7 @@ namespace Ads.Controllers
         /// <param name="password"></param>
         /// <returns>Boolean</returns>
         [NonAction]
-        public bool VaidateUser(string userName, string password)
+        public virtual bool VaidateUser(string userName, string password)
         {
             // Check if it is valid credential  
             var queryable = db.Auths

@@ -183,6 +183,20 @@ namespace AdsApp.Test
         /// Test Post Auth.
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(DbUpdateConcurrencyException))]
+        public async Task PutAuth_ShouldRaiseException()
+        {
+
+            var mock_auths = new Auth { Id = 1, Name = "123", Password = "123" };
+
+            //Stub FindAsync method
+            A.CallTo(() => context.SaveChangesAsync()).Throws<DbUpdateConcurrencyException>(); ;
+
+            AuthsController controller = new AuthsController(context);
+            await controller.PutAuth(mock_auths.Id, mock_auths);
+        }
+
+        [TestMethod]
         public async Task PostAuths_ShouldPostAuths()
         {
             // Data found
