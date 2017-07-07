@@ -171,7 +171,7 @@ namespace AdsApp.Test
         /// Test Put Ad.
         /// </summary>
         [Test]
-        [NUnit.Framework.ExpectedException(typeof(DbUpdateConcurrencyException))]
+        [ExpectedException(typeof(DbUpdateConcurrencyException))]
         public async Task PutAd_ShouldRaiseException()
         {
             int mock_id = 11;
