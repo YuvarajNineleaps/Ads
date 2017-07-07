@@ -12,12 +12,17 @@ using System.Net;
 using System;
 using System.Data.Entity.Infrastructure;
 
+using NUnit.Framework;
+using Assert = NUnit.Framework.Assert;
+using CollectionAssert = NUnit.Framework.CollectionAssert;
+using StringAssert = NUnit.Framework.StringAssert;
+
 namespace AdsApp.Test
 {
     /// <summary>
     /// TestAdController class.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class TestAdController
     {
         private AdContext context;
@@ -25,7 +30,7 @@ namespace AdsApp.Test
         /// <summary>
         /// Test initialize.
         /// </summary>
-        [TestInitialize]
+        [Setup]
         public void TestInit()
         {
             //Arrange
@@ -42,7 +47,7 @@ namespace AdsApp.Test
         /// <summary>
         /// Test Get ads to return all ads.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetAds_ShouldReturnAllAds()
         {
             AdController controller = new AdController(context);
