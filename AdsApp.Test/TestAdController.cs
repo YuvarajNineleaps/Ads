@@ -30,7 +30,7 @@ namespace AdsApp.Test
         /// <summary>
         /// Test initialize.
         /// </summary>
-        [Setup]
+        [SetUp]
         public void TestInit()
         {
             //Arrange
