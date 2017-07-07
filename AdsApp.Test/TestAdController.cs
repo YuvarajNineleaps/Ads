@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ads.Models;
 using System.Linq;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ using System;
 using System.Data.Entity.Infrastructure;
 
 using NUnit.Framework;
-using Assert = NUnit.Framework.Assert;
-using CollectionAssert = NUnit.Framework.CollectionAssert;
-using StringAssert = NUnit.Framework.StringAssert;
+//using Assert = NUnit.Framework.Assert;
+//using CollectionAssert = NUnit.Framework.CollectionAssert;
+//using StringAssert = NUnit.Framework.StringAssert;
 
 namespace AdsApp.Test
 {
@@ -31,7 +31,6 @@ namespace AdsApp.Test
         /// Test initialize.
         /// </summary>
         [SetUp]
-        [TestInitialize]
         public void TestInit()
         {
             //Arrange
@@ -49,7 +48,6 @@ namespace AdsApp.Test
         /// Test Get ads to return all ads.
         /// </summary>
         [Test]
-        [TestMethod]
         public void GetAds_ShouldReturnAllAds()
         {
             AdController controller = new AdController(context);
@@ -64,7 +62,6 @@ namespace AdsApp.Test
         /// Test Get ad to return ad by id.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task GetAd_ShouldReturnAdsByIdAsync()
         {
             // Data found
@@ -90,7 +87,6 @@ namespace AdsApp.Test
         /// Test Get ad to return ad by id.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task GetAd_ShouldReturnNotFound()
         {
            
@@ -112,7 +108,6 @@ namespace AdsApp.Test
         /// Test Put Ad.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task PutAd_ShouldReturnInvalidModelState()
         {
             int mock_id = 15;
@@ -136,7 +131,6 @@ namespace AdsApp.Test
         /// Test Put Ad.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task PutAd_ShouldReturnBadRequest()
         {
             int mock_id = 15;
@@ -156,7 +150,6 @@ namespace AdsApp.Test
         /// Test Put Ad.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task PutAd_ShouldReturnStatusCode()
         {
             int mock_id = 11;
@@ -178,8 +171,6 @@ namespace AdsApp.Test
         /// Test Put Ad.
         /// </summary>
         [Test]
-        [TestMethod]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedException(typeof(DbUpdateConcurrencyException))]
         [NUnit.Framework.ExpectedException(typeof(DbUpdateConcurrencyException))]
         public async Task PutAd_ShouldRaiseException()
         {
@@ -198,7 +189,6 @@ namespace AdsApp.Test
         /// Test Post Ad.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task PostAd_ShouldPostAd()
         {
             // Data found
@@ -223,7 +213,6 @@ namespace AdsApp.Test
         /// Test Post Ad.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task PostAd_ShouldReturnInvalidModelState()
         {
 
@@ -246,7 +235,6 @@ namespace AdsApp.Test
         /// Test Delete Ad by Id.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task DeleteAd_ShouldDeleteAdsByIdAsync()
         {
             // Data found
@@ -270,7 +258,6 @@ namespace AdsApp.Test
         /// Test Delete Ad by Id.
         /// </summary>
         [Test]
-        [TestMethod]
         public async Task DeleteAd_ShouldNotFound()
         {
              var mock_id = 100;
