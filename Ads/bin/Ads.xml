@@ -95,6 +95,12 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="M:Ads.Controllers.AdController.abc(System.Int32)">
+            <summary>
+            Delete ad by ID.
+            </summary>
+            <param name="id"></param>
+        </member>
         <member name="M:Ads.Controllers.AdController.Dispose(System.Boolean)">
             <summary>
             Disposing of database.
